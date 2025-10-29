@@ -1,0 +1,214 @@
+name: Agregar y Desplegar Documentación
+
+on:
+  # Trigger cuando se recibe un evento desde un proyecto
+  repository_dispatch:
+    types: [docs_updated]
+
+  # Trigger cuando se actualiza cualquier rama docs/*
+  push:
+    branches:
+      - 'docs/**'
+
+  # Permitir ejecución manual
+  workflow_dispatch:
+    inputs:
+      rebuild_all:
+        description: 'Reconstruir toda la documentación'
+        required: false
+        default: 'false'
+        type: boolean
+
+  # Ejecutar periódicamente para mantener actualizado
+  schedule:
+    - cron: '0 2 * * *'  # Diariamente a las 2 AM
+
+env:
+  PYTHON_VERSION: '3.10'
+
+jobs:
+  aggregate-documentation:
+    name: Agregar Documentación de Proyectos
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repositorio principal
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Necesario para obtener todas las ramas
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Instalar dependencias del agregador
+        run: |
+          pip install --upgrade pip
+          pip install pyyaml mkdocs mkdocs-material mkdocs-material-extensions
+          pip install jsonschema markdown pygments
+
+      - name: Buscar y fetch todas las ramas docs/*
+        run: |
+          echo "📥 Obteniendo todas las ramas de documentación..."
+
+          # Fetch todas las ramas remotas
+          git fetch --all
+
+          # Listar ramas docs/*
+          echo "📋 Ramas de documentación encontradas:"
+          git branch -r | grep "origin/docs/" || echo "No se encontraron ramas docs/*"
+
+      - name: Ejecutar agregador de documentación
+        run: |
+          echo "🔄 Ejecutando agregador de documentación..."
+          python scripts/aggregate_docs.py --mode branches --verbose
+        continue-on-error: true
+
+      - name: Verificar resultado de agregación
+        run: |
+          if [ -f "docs/mkdocs.yml" ]; then
+            echo "✅ Configuración MkDocs generada exitosamente"
+            echo "📋 Contenido de mkdocs.yml:"
+            head -50 docs/mkdocs.yml
+          else
+            echo "❌ No se generó mkdocs.yml"
+            exit 1
+          fi
+
+      - name: Validar estructura de documentación
+        run: |
+          echo "🔍 Validando estructura de documentación..."
+
+          # Verificar que existe la carpeta de proyectos
+          if [ -d "docs/docs/proyectos" ]; then
+            echo "✅ Carpeta de proyectos existe"
+            echo "📁 Proyectos encontrados:"
+            ls -la docs/docs/proyectos/
+          else
+            echo "⚠️ No se encontró carpeta de proyectos"
+          fi
+
+      - name: Construir sitio MkDocs
+        run: |
+          cd docs
+          echo "🏗️ Construyendo sitio MkDocs..."
+          mkdocs build --strict --verbose
+        continue-on-error: false
+
+      - name: Crear archivo .nojekyll
+        run: |
+          touch docs/site/.nojekyll
+          echo "📄 Archivo .nojekyll creado para GitHub Pages"
+
+      - name: Generar reporte de documentación
+        run: |
+          cat > docs/site/build-info.json <<EOF
+          {
+            "build_time": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "commit": "${{ github.sha }}",
+            "triggered_by": "${{ github.event_name }}",
+            "repository": "${{ github.repository }}",
+            "run_id": "${{ github.run_id }}",
+            "run_number": "${{ github.run_number }}"
+          }
+          EOF
+
+          echo "📊 Información de build guardada"
+
+      - name: Deploy a GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/site
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: '🚀 Desplegar documentación agregada - ${{ github.sha }}'
+
+      - name: Crear resumen de ejecución
+        if: always()
+        run: |
+          echo "## 📚 Resumen de Agregación de Documentación" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -d "docs/docs/proyectos" ]; then
+            project_count=$(find docs/docs/proyectos -maxdepth 1 -type d | wc -l)
+            echo "✅ **Proyectos procesados:** $((project_count - 1))" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ **No se encontraron proyectos**" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Detalles" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fecha:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            echo "- **Proyecto actualizado:** ${{ github.event.client_payload.repository }}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Enlaces" >> $GITHUB_STEP_SUMMARY
+          echo "- [Ver sitio de documentación](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Ver logs de build](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+
+  notify-update:
+    name: Notificar Actualización
+    needs: aggregate-documentation
+    if: success() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificación de éxito
+        run: |
+          echo "✅ Documentación actualizada y desplegada exitosamente"
+
+          # Aquí puedes agregar integraciones con Slack, Discord, etc.
+          # Ejemplo con webhook de Discord:
+          # curl -H "Content-Type: application/json" \
+          #      -X POST \
+          #      -d '{"content":"📚 Documentación actualizada exitosamente"}' \
+          #      ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+  cleanup-old-branches:
+    name: Limpiar Ramas Antiguas de Documentación
+    needs: aggregate-documentation
+    if: github.event_name == 'schedule'  # Solo en ejecuciones programadas
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Limpiar ramas docs/* antiguas
+        run: |
+          echo "🧹 Buscando ramas de documentación antiguas (>30 días)..."
+
+          # Fecha límite (30 días atrás)
+          LIMIT_DATE=$(date -d "30 days ago" +%s)
+
+          # Buscar y eliminar ramas antiguas
+          git branch -r | grep "origin/docs/" | while read branch; do
+            branch_name=${branch#origin/}
+            last_commit_date=$(git log -1 --format=%ct origin/$branch_name)
+
+            if [ "$last_commit_date" -lt "$LIMIT_DATE" ]; then
+              echo "Eliminando rama antigua: $branch_name"
+              git push origin --delete $branch_name || true
+            fi
+          done
+
+          echo "✅ Limpieza completada"
