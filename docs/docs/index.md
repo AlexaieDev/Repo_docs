@@ -1,26 +1,44 @@
-# MkDocs Quickstart
->  Started template for a MkDocs docs site on GH Pages - including CI 
+# Centro de Documentación
 
-[![Repo stars](https://img.shields.io/github/stars/MichaelCurrin/mkdocs-quickstart?style=social)](https://github.com/MichaelCurrin/mkdocs-quickstart)
+Bienvenido al centro de documentación consolidada de todos los proyectos. Este sitio centraliza la información técnica, guías y referencias de nuestros sistemas.
 
-Use the MkDocs (_make docs_) tool to create build a docs site around markdown docs.
+## ¿Qué encontrarás aquí?
 
-Follow the tutorial to add an existing project or create a project from scratch. The result will look like this project.
+Esta documentación está diseñada para desarrolladores, equipos técnicos y colaboradores que necesiten:
 
+- **Documentación técnica completa** de cada proyecto
+- **Guías de inicio rápido** para empezar a trabajar rápidamente
+- **Referencias de API** detalladas y ejemplos de código
+- **Mejores prácticas** y patrones de desarrollo
+- **Tutoriales paso a paso** para tareas comunes
 
-## Features
-> How to use this project
+## Proyectos Documentados
 
-- **Follow the tutorial instructions**
-    - Install and configure a new or existing project.
-    - Run it locally.
-    - Deploy it.
-- **Add a copy of this project to your repos**
-    - [![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?logo=github)](https://github.com/MichaelCurrin/mkdocs-quickstart/generate)
-- **View the live demo**
-    - This site is hosted on GitHub Pages. See if you like it. Other themes are available - see the tutorial.
+Actualmente mantenemos documentación para múltiples proyectos en diferentes etapas de desarrollo:
 
+### [Proyecto 1 - Sistema de Gestión](proyectos/proyecto-1/index.md)
+Sistema de gestión empresarial con arquitectura de microservicios.
+- **Estado:** Producción
+- **Stack:** Python, FastAPI, PostgreSQL
 
-The aim here is not be complete or explain all concepts. It is to provide a reference for common steps and choices needed when setting up a docs site, but still at a beginner-friendly level.
+### [Proyecto 2 - Aplicación E-Commerce](proyectos/proyecto-2/index.md)
+Aplicación móvil multiplataforma para comercio electrónico.
+- **Estado:** Beta
+- **Stack:** React Native, Node.js, MongoDB
 
-This guide is based on the [mkdocs.org](https://www.mkdocs.org/) tutorial.
+### [Proyecto 3 - API de Integraciones](proyectos/proyecto-3/index.md)
+API REST para integraciones con servicios externos.
+- **Estado:** Desarrollo
+- **Stack:** Go, Docker, Redis
+
+## Navegación Rápida
+
+- **[Ver todos los proyectos →](proyectos/index.md)**
+- **[Tutorial de MkDocs](about-mkdocs.md)** - Aprende sobre la plataforma de documentación
+- **[Buscar](search.html)** - Encuentra información específica
+
+## Mantenimiento
+
+Esta documentación se actualiza automáticamente mediante GitHub Actions cada vez que se hace push al repositorio.
+
+**Última actualización:** Automática con cada despliegue

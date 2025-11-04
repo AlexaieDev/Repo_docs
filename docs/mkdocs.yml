@@ -12,12 +12,33 @@ edit_uri: edit/main/docs/docs
 theme: readthedocs
 
 nav:
-  - Home: index.md
-  - About MkDocs: about-mkdocs.md
-  - Tutorial:
-      - TL;DR: tutorial/tldr.md
-      - Installation: tutorial/installation.md
-      - Set up project: tutorial/setup-project.md
-      - Advanced: tutorial/advanced.md
-      - Usage: tutorial/usage.md
-      - Deploy: tutorial/deploy.md
+  - Inicio: index.md
+  - Proyectos:
+      - Índice de Proyectos: proyectos/index.md
+      - Proyecto 1 - Sistema de Gestión:
+          - Resumen: proyectos/proyecto-1/index.md
+          - Getting Started: proyectos/proyecto-1/getting-started/index.md
+          - API Reference: proyectos/proyecto-1/api/index.md
+          - Guías: proyectos/proyecto-1/guides/index.md
+          - Ejemplos: proyectos/proyecto-1/examples/index.md
+      - Proyecto 2 - E-Commerce:
+          - Resumen: proyectos/proyecto-2/index.md
+          - Getting Started: proyectos/proyecto-2/getting-started/index.md
+          - API Reference: proyectos/proyecto-2/api/index.md
+          - Guías: proyectos/proyecto-2/guides/index.md
+          - Ejemplos: proyectos/proyecto-2/examples/index.md
+      - Proyecto 3 - API Integraciones:
+          - Resumen: proyectos/proyecto-3/index.md
+          - Getting Started: proyectos/proyecto-3/getting-started/index.md
+          - API Reference: proyectos/proyecto-3/api/index.md
+          - Guías: proyectos/proyecto-3/guides/index.md
+          - Ejemplos: proyectos/proyecto-3/examples/index.md
+  - Guías MkDocs:
+      - Acerca de MkDocs: about-mkdocs.md
+      - Tutorial:
+          - TL;DR: tutorial/tldr.md
+          - Installation: tutorial/installation.md
+          - Set up project: tutorial/setup-project.md
+          - Advanced: tutorial/advanced.md
+          - Usage: tutorial/usage.md
+          - Deploy: tutorial/deploy.md
