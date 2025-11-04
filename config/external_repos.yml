@@ -61,6 +61,31 @@ repositories:
     # Programación de actualizaciones
     update_schedule: always
 
+  # SBOM Analysis Using Agentic
+  - name: SBOM Analysis Using Agentic
+    owner: oscarvalenzuelab
+    repo: sbom_analysis_using_agentic
+    branch: main
+
+    # Metadata para la página del proyecto
+    metadata:
+      category: Security
+      status: active
+      featured: true
+      description: "Análisis de SBOM utilizando sistemas agnósticos de IA"
+      tags:
+        - sbom
+        - security
+        - agentic
+        - vulnerability-analysis
+        - supply-chain
+
+    # Estrategia de importación
+    import_strategy: full_docs
+
+    # Programación de actualizaciones
+    update_schedule: always
+
   # Ejemplo: Agregar más repositorios aquí
   # - name: Otro Proyecto
   #   owner: AlexaieDev
