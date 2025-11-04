@@ -21,7 +21,7 @@ plugins:
         - name: best-practices
           import_url: 'https://github.com/AlexaieDev/best_practices?branch=main'
           imports: [
-            'README.md -> docs/best-practices.md',
+            'README.md -> best-practices.md',
           ]
 
 nav:
