@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/tutorial/usage/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/best-practices/CONTRIBUTING/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Usage - Centro de Documentación</title>
+    <title>Contributing - Centro de Documentación</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Usage";
-        var mkdocs_page_input_path = "tutorial/usage.md";
-        var mkdocs_page_url = "/Repo_docs/tutorial/usage/";
+        var mkdocs_page_name = "Contributing";
+        var mkdocs_page_input_path = "best-practices/CONTRIBUTING.md";
+        var mkdocs_page_url = "/Repo_docs/best-practices/CONTRIBUTING/";
       </script>
     
     <!--[if lt IE 9]>
@@ -91,43 +91,49 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Proyectos Externos</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/">Overview</a>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Best Practices</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/CONTRIBUTING/">Contributing</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Contributing</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#branching-model-trunk-based-recommended">Branching model (trunk-based recommended)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-requests">Pull Requests</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commit-messages">Commit messages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#secrets-credentials">Secrets &amp; credentials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dependency-hygiene">Dependency hygiene</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#secure-coding-checklist-quick">Secure coding checklist (quick)</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/SECURITY/">Security</a>
+                <li class="toctree-l2"><a class="reference internal" href="../SECURITY/">Security</a>
                 </li>
     </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../about-mkdocs/">Acerca de MkDocs</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Tutorial</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../tldr/">TL;DR</a>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/tldr/">TL;DR</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../installation/">Installation</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/installation/">Installation</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../setup-project/">Set up project</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/setup-project/">Set up project</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../advanced/">Advanced</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/advanced/">Advanced</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Usage</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#cli-help">CLI help</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#serve-docs">Serve docs</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#build-docs">Build docs</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/usage/">Usage</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../deploy/">Deploy</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/deploy/">Deploy</a>
                 </li>
     </ul>
                   </li>
@@ -146,11 +152,11 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Guías MkDocs</li>
-          <li class="breadcrumb-item">Tutorial</li>
-      <li class="breadcrumb-item active">Usage</li>
+          <li class="breadcrumb-item">Proyectos Externos</li>
+          <li class="breadcrumb-item">Best Practices</li>
+      <li class="breadcrumb-item active">Contributing</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/AlexaieDev/Repo_docs/edit/main/docs/docs/tutorial/usage.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/AlexaieDev/best_practices/edit/main/docs/CONTRIBUTING.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -158,43 +164,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="usage">Usage</h1>
-<blockquote>
-<p>Build and preview a site locally</p>
-</blockquote>
-<p>Make sure to run all commands from the <code>docs</code> directory, as that is where <code>Makefile</code> is.</p>
-<pre><code class="language-sh">$ cd docs
-</code></pre>
-<h2 id="cli-help">CLI help</h2>
-<pre><code class="language-sh">$ make help
-</code></pre>
-<pre><code>default: install
-all: install build
-h help:
-install:
-upgrade:
-s serve:
-b build:
-d deploy:
-</code></pre>
-<h2 id="serve-docs">Serve docs</h2>
-<p>This will build the docs in memory (not to disk) and serve an auto-reloading server.</p>
-<pre><code class="language-sh">$ make serve
-</code></pre>
-<p>Then open in your browser:</p>
+                <h1 id="contributing-secure-development-guidelines">Contributing &amp; Secure Development Guidelines</h1>
+<h2 id="branching-model-trunk-based-recommended">Branching model (trunk-based recommended)</h2>
 <ul>
-<li><a href="http://localhost:8000">localhost:8000</a></li>
+<li>Default branch: <code>main</code> (protected).</li>
+<li>Short-lived feature branches from <code>main</code>:</li>
+<li><code>feat/&lt;ticket&gt;-short-desc</code></li>
+<li><code>fix/&lt;ticket&gt;-short-desc</code></li>
+<li><code>chore/&lt;desc&gt;</code>, <code>docs/&lt;desc&gt;</code>, <code>sec/&lt;desc&gt;</code> for security hardening</li>
+<li><strong>No direct commits to <code>main</code></strong>. Always via PR with green CI and approvals.</li>
+<li><strong>Merge method</strong>: prefer <strong>squash merge</strong> for clean history. Rebase locally if needed.</li>
 </ul>
-<h2 id="build-docs">Build docs</h2>
-<p>Build docs site to <code>site</code> directory. This is useful for a CI flow.</p>
-<pre><code class="language-sh">$ make build
-</code></pre>
+<h2 id="pull-requests">Pull Requests</h2>
+<ul>
+<li>Keep PRs small and focused. Include a clear description, risk assessment, and test evidence.</li>
+<li><strong>Required</strong>: 1–2 approvals (incl. CODEOWNERS when touching owned paths).</li>
+<li>Resolve all comments and conversations before merge.</li>
+<li>CI must pass: tests, lint, SAST, secrets, deps. Keep branch up-to-date.</li>
+</ul>
+<h2 id="commit-messages">Commit messages</h2>
+<ul>
+<li>Follow <strong>Conventional Commits</strong>: e.g., <code>feat(ui): add dark mode toggle</code>, <code>fix(api): handle 401</code>.</li>
+<li>Reference tickets (e.g., JIRA) in the footer.</li>
+</ul>
+<h2 id="secrets-credentials">Secrets &amp; credentials</h2>
+<ul>
+<li><strong>Never</strong> commit secrets. Use environment secrets or OIDC (see <code>deploy-prod.yml</code> example).</li>
+<li>Run pre-commit hooks to detect leaks before pushing.</li>
+</ul>
+<h2 id="dependency-hygiene">Dependency hygiene</h2>
+<ul>
+<li>Keep dependencies minimal and pinned. Let Dependabot open PRs; review carefully.</li>
+<li>Avoid abandoned packages; prefer vendors with security track records.</li>
+</ul>
+<h2 id="secure-coding-checklist-quick">Secure coding checklist (quick)</h2>
+<ul>
+<li>Validate all inputs; fail closed.</li>
+<li>Principle of least privilege (tokens, cloud roles, DB users).</li>
+<li>Store secrets in env or KMS; rotate regularly.</li>
+<li>Log security-relevant events (authz failures, admin actions). Avoid logging secrets.</li>
+<li>Review dangerous patterns (command exec, deserialization, SQL queries).</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../advanced/" class="btn btn-neutral float-left" title="Advanced"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../deploy/" class="btn btn-neutral float-right" title="Deploy">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SECURITY/" class="btn btn-neutral float-right" title="Security">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -221,10 +237,10 @@ d deploy:
         </span>
     
     
-      <span><a href="../advanced/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../SECURITY/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
