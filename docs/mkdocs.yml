@@ -1,11 +1,11 @@
 ### Site metadata ###
 
-site_name: MkDocs Quickstart
-site_description: Starter template for a MkDocs docs site on GH Pages - including CI
-site_url: https://michaelcurrin.github.io/mkdocs-quickstart/
+site_name: Centro de Documentación
+site_description: Documentación consolidada de todos los proyectos
+site_url: https://alexaiedev.github.io/Repo_docs/
 
-repo_url: https://github.com/MichaelCurrin/mkdocs-quickstart
-edit_uri: edit/master/docs/docs
+repo_url: https://github.com/AlexaieDev/Repo_docs
+edit_uri: edit/main/docs/docs
 
 ### Build settings ###
 
