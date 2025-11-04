@@ -11,6 +11,18 @@ edit_uri: edit/main/docs/docs
 
 theme: readthedocs
 
+### Plugins ###
+
+plugins:
+  - search
+  - multirepo:
+      cleanup: true
+      keep_docs_dir: true
+      nav_repos:
+        - name: Best Practices
+          import_url: 'https://github.com/AlexaieDev/best_practices'
+          imports: [ README.md, docs/* ]
+
 nav:
   - Inicio: index.md
   - Proyectos:
@@ -33,6 +45,8 @@ nav:
           - API Reference: proyectos/proyecto-3/api/index.md
           - Guías: proyectos/proyecto-3/guides/index.md
           - Ejemplos: proyectos/proyecto-3/examples/index.md
+  - Proyectos Externos:
+      - Best Practices: '!import https://github.com/AlexaieDev/best_practices'
   - Guías MkDocs:
       - Acerca de MkDocs: about-mkdocs.md
       - Tutorial:

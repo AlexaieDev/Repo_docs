@@ -54,4 +54,5 @@ jobs:
         working-directory: docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GithubAccessToken: ${{ secrets.GITHUB_TOKEN }}  # Para mkdocs-multirepo-plugin
         run: make deploy

@@ -1,0 +1,56 @@
+# Configuración de Repositorios Externos
+# Este archivo define qué repositorios de GitHub se importarán automáticamente
+# al sitio de documentación
+
+repositories:
+  # Repositorio de Best Practices
+  - name: Best Practices
+    owner: AlexaieDev
+    repo: best_practices
+    branch: main
+
+    # Metadata para la página del proyecto
+    metadata:
+      category: Development
+      status: production
+      featured: true
+      description: "Mejores prácticas y estándares de desarrollo"
+      tags:
+        - python
+        - standards
+        - quality
+        - best-practices
+
+    # Estrategia de importación
+    # - full_docs: Importa toda la carpeta docs/ si existe
+    # - readme_only: Solo importa el README.md
+    # - selective: Archivos específicos definidos en 'files'
+    import_strategy: full_docs
+
+    # Directorio de documentación en el repo fuente (si existe)
+    docs_dir: docs
+
+    # Programación de actualizaciones
+    # - always: En cada build
+    # - daily: Una vez al día
+    # - weekly: Una vez a la semana
+    # - manual: Solo cuando se ejecute manualmente
+    update_schedule: always
+
+  # Ejemplo: Agregar más repositorios aquí
+  # - name: Otro Proyecto
+  #   owner: AlexaieDev
+  #   repo: otro-proyecto
+  #   branch: main
+  #   metadata:
+  #     category: Tools
+  #     status: beta
+  #     featured: false
+  #     description: "Descripción del proyecto"
+  #   import_strategy: readme_only
+  #   update_schedule: daily
+
+# Notas de configuración:
+# - Para repositorios privados, asegúrate de que GITHUB_TOKEN tenga permisos
+# - Los repos se importarán en docs/docs/proyectos-externos/
+# - La navegación se actualizará automáticamente en mkdocs.yml
