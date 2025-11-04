@@ -20,9 +20,6 @@ plugins:
       nav_repos:
         - name: best-practices
           import_url: 'https://github.com/AlexaieDev/best_practices?branch=main'
-          imports: [
-            'README.md -> best-practices.md',
-          ]
 
 nav:
   - Inicio: index.md
@@ -47,7 +44,10 @@ nav:
           - Guías: proyectos/proyecto-3/guides/index.md
           - Ejemplos: proyectos/proyecto-3/examples/index.md
   - Proyectos Externos:
-      - Best Practices: best-practices.md
+      - Best Practices:
+          - Overview: best-practices/README.md
+          - Contributing: best-practices/CONTRIBUTING.md
+          - Security: best-practices/SECURITY.md
   - Guías MkDocs:
       - Acerca de MkDocs: about-mkdocs.md
       - Tutorial:
