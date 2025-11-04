@@ -20,7 +20,7 @@ plugins:
       keep_docs_dir: true
       nav_repos:
         - name: Best Practices
-          import_url: 'https://github.com/AlexaieDev/best_practices'
+          import_url: 'https://github.com/AlexaieDev/best_practices?branch=main'
           imports: [ README.md, docs/* ]
 
 nav:
