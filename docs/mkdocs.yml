@@ -47,7 +47,7 @@ nav:
   #         - API Reference: proyectos/proyecto-3/api/index.md
   #         - Guías: proyectos/proyecto-3/guides/index.md
   #         - Ejemplos: proyectos/proyecto-3/examples/index.md
-  - Proyectos Externos:
+  - Proyects:
       - Best Practices:
           - Overview: best-practices/README.md
           - Contributing: best-practices/CONTRIBUTING.md
