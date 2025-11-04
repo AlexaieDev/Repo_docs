@@ -37,6 +37,30 @@ repositories:
     # - manual: Solo cuando se ejecute manualmente
     update_schedule: always
 
+  # Open Agentic Framework
+  - name: Open Agentic Framework
+    owner: oscarvalenzuelab
+    repo: open_agentic_framework
+    branch: main
+
+    # Metadata para la página del proyecto
+    metadata:
+      category: Framework
+      status: active
+      featured: true
+      description: "Framework agnóstico para desarrollo de agentes AI"
+      tags:
+        - ai
+        - agents
+        - framework
+        - agentic-systems
+
+    # Estrategia de importación
+    import_strategy: full_docs
+
+    # Programación de actualizaciones
+    update_schedule: always
+
   # Ejemplo: Agregar más repositorios aquí
   # - name: Otro Proyecto
   #   owner: AlexaieDev

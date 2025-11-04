@@ -20,6 +20,8 @@ plugins:
       nav_repos:
         - name: best-practices
           import_url: 'https://github.com/AlexaieDev/best_practices?branch=main'
+        - name: open-agentic-framework
+          import_url: 'https://github.com/oscarvalenzuelab/open_agentic_framework?branch=main'
 
 nav:
   - Inicio: index.md
@@ -48,6 +50,8 @@ nav:
           - Overview: best-practices/README.md
           - Contributing: best-practices/CONTRIBUTING.md
           - Security: best-practices/SECURITY.md
+      - Open Agentic Framework:
+          - Overview: open-agentic-framework/README.md
   - Guías MkDocs:
       - Acerca de MkDocs: about-mkdocs.md
       - Tutorial:
