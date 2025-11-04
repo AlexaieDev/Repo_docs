@@ -9,7 +9,7 @@ This is a summary of the tutorial on [mkdocs.org](https://www.mkdocs.org/).
 Use one of the approaches below:
 
 - Create a quickstart project with the `new` command covered in [Create a starter site](#create-a-starter-site).
-- Follow the extended guide to create a [Set up up docs site](#setup-a-docs-site) by hand.
+- Follow the extended guide to create a [Set up docs site](#set-up-a-docs-site) by hand.
 
 ### Basic structure
 
