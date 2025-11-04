@@ -1,35 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/about-mkdocs/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/about-mkdocs/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/advanced/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/deploy/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-1/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/installation/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-1/api/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/setup-project/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-1/examples/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/tldr/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-1/getting-started/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://michaelcurrin.github.io/mkdocs-quickstart/tutorial/usage/</loc>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-1/guides/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-2/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-2/api/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-2/examples/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-2/getting-started/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-2/guides/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-3/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-3/api/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-3/examples/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-3/getting-started/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/proyectos/proyecto-3/guides/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/advanced/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/deploy/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/installation/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/setup-project/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/tldr/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://alexaiedev.github.io/Repo_docs/tutorial/usage/</loc>
          <lastmod>2025-11-04</lastmod>
     </url>
 </urlset>
