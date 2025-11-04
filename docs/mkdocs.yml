@@ -46,7 +46,7 @@ nav:
           - Guías: proyectos/proyecto-3/guides/index.md
           - Ejemplos: proyectos/proyecto-3/examples/index.md
   - Proyectos Externos:
-      - Best Practices: '!import https://github.com/AlexaieDev/best_practices'
+      - Best Practices: '!import https://github.com/AlexaieDev/best_practices?branch=main'
   - Guías MkDocs:
       - Acerca de MkDocs: about-mkdocs.md
       - Tutorial:
