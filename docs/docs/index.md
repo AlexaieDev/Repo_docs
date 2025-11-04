@@ -35,7 +35,7 @@ API REST para integraciones con servicios externos.
 
 - **[Ver todos los proyectos →](proyectos/index.md)**
 - **[Tutorial de MkDocs](about-mkdocs.md)** - Aprende sobre la plataforma de documentación
-- **[Buscar](search.html)** - Encuentra información específica
+- **Buscar** - Utiliza la barra de búsqueda en la parte superior para encontrar información específica
 
 ## Mantenimiento
 
