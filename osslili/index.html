@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/osslili/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>osslili - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "osslili";
+        var mkdocs_page_input_path = "osslili/README.md";
+        var mkdocs_page_url = "/Repo_docs/osslili/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">osslili</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-it-works">How It Works</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-output">Example Output</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#library-usage">Library Usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output-format">Output Format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">osslili</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/osslili/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="oss-license-copyright-detector-osslili">OSS License &amp; Copyright Detector (osslili)</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/osslili/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/osslili.svg" /></a></p>
+<p>A high-performance tool for identifying licenses and copyright information in local source code. Produces detailed evidence of where licenses are detected with support for all 700+ SPDX license identifiers, enabling comprehensive compliance documentation for the SEMCL.ONE ecosystem.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Three-Tier License Detection</strong>: Dice-Sørensen similarity, TLSH fuzzy hashing, and regex pattern matching</li>
+<li><strong>Evidence-Based Output</strong>: Exact file paths, confidence scores, and detection methods</li>
+<li><strong>700+ SPDX Licenses</strong>: Comprehensive support for all SPDX license identifiers</li>
+<li><strong>SEMCL.ONE Integration</strong>: Works seamlessly with purl2notices, ospac, and other ecosystem tools</li>
+</ul>
+<h3 id="how-it-works">How It Works</h3>
+<h4 id="three-tier-license-detection-system">Three-Tier License Detection System</h4>
+<p>The tool uses a sophisticated multi-tier approach for maximum accuracy:</p>
+<ol>
+<li><strong>Tier 1: Dice-Sørensen Similarity with TLSH Confirmation</strong></li>
+<li>Compares license text using Dice-Sørensen coefficient (97% threshold)</li>
+<li>Confirms matches using TLSH fuzzy hashing to prevent false positives</li>
+<li>
+<p>Achieves 97-100% accuracy on standard SPDX licenses</p>
+</li>
+<li>
+<p><strong>Tier 2: TLSH Fuzzy Hash Matching</strong></p>
+</li>
+<li>Uses Trend Micro Locality Sensitive Hashing for variant detection</li>
+<li>Catches license variants like MIT-0, BSD-2-Clause vs BSD-3-Clause</li>
+<li>
+<p>Pre-computed hashes for all 700+ SPDX licenses</p>
+</li>
+<li>
+<p><strong>Tier 3: Pattern Recognition</strong></p>
+</li>
+<li>Regex-based detection for license references and identifiers</li>
+<li>Extracts from comments, headers, and documentation</li>
+</ol>
+<h4 id="additional-detection-methods">Additional Detection Methods</h4>
+<ul>
+<li><strong>Package Metadata Scanning</strong>: Detects licenses from package.json, composer.json, pyproject.toml, etc.</li>
+<li><strong>Copyright Extraction</strong>: Advanced pattern matching with validation and deduplication</li>
+<li><strong>SPDX Identifier Detection</strong>: Finds SPDX-License-Identifier tags in source files</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install osslili
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/osslili.git
+cd osslili
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Scan current directory for licenses
+osslili .
+
+# Generate SBOM with license evidence
+osslili ./my-project -f cyclonedx-json -o sbom.json
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Scan a directory and see evidence (default format)
+osslili /path/to/project
+
+# Generate different output formats
+osslili ./my-project -f kissbom -o kissbom.json
+osslili ./my-project -f cyclonedx-json -o sbom.json
+osslili ./my-project -f cyclonedx-xml -o sbom.xml
+
+# Scan with parallel processing (4 threads)
+osslili ./my-project --threads 4
+
+# Scan with limited depth (only 2 levels deep)
+osslili ./my-project --max-depth 2
+
+# Extract and scan archives
+osslili package.tar.gz --max-extraction-depth 2
+
+# Use caching for faster repeated scans
+osslili ./my-project --cache-dir ~/.cache/osslili
+
+# Check version
+osslili --version
+
+# Save results to file
+osslili ./my-project -o license-evidence.json
+
+# With custom configuration and verbose output
+osslili ./src --config config.yaml --verbose
+
+# Debug mode for detailed logging
+osslili ./project --debug
+</code></pre>
+<h3 id="example-output">Example Output</h3>
+<pre><code class="language-json">{
+  &quot;scan_results&quot;: [{
+    &quot;path&quot;: &quot;./project&quot;,
+    &quot;license_evidence&quot;: [
+      {
+        &quot;file&quot;: &quot;/path/to/project/LICENSE&quot;,
+        &quot;detected_license&quot;: &quot;Apache-2.0&quot;,
+        &quot;confidence&quot;: 0.988,
+        &quot;detection_method&quot;: &quot;dice-sorensen&quot;,
+        &quot;category&quot;: &quot;declared&quot;,
+        &quot;match_type&quot;: &quot;text_similarity&quot;,
+        &quot;description&quot;: &quot;Text matches Apache-2.0 license (98.8% similarity)&quot;
+      },
+      {
+        &quot;file&quot;: &quot;/path/to/project/package.json&quot;,
+        &quot;detected_license&quot;: &quot;Apache-2.0&quot;,
+        &quot;confidence&quot;: 1.0,
+        &quot;detection_method&quot;: &quot;tag&quot;,
+        &quot;category&quot;: &quot;declared&quot;,
+        &quot;match_type&quot;: &quot;spdx_identifier&quot;,
+        &quot;description&quot;: &quot;SPDX-License-Identifier: Apache-2.0 found&quot;
+      }
+    ],
+    &quot;copyright_evidence&quot;: [
+      {
+        &quot;file&quot;: &quot;/path/to/project/src/main.py&quot;,
+        &quot;holder&quot;: &quot;Example Corp&quot;,
+        &quot;years&quot;: [2023, 2024],
+        &quot;statement&quot;: &quot;Copyright 2023-2024 Example Corp&quot;
+      }
+    ]
+  }],
+  &quot;summary&quot;: {
+    &quot;total_files_scanned&quot;: 42,
+    &quot;declared_licenses&quot;: {&quot;Apache-2.0&quot;: 2},
+    &quot;detected_licenses&quot;: {},
+    &quot;referenced_licenses&quot;: {},
+    &quot;copyright_holders&quot;: [&quot;Example Corp&quot;]
+  }
+}
+</code></pre>
+<h3 id="library-usage">Library Usage</h3>
+<pre><code class="language-python">from osslili import LicenseCopyrightDetector
+
+# Initialize detector
+detector = LicenseCopyrightDetector()
+
+# Process a local directory
+result = detector.process_local_path(&quot;/path/to/source&quot;)
+
+# Process a single file  
+result = detector.process_local_path(&quot;/path/to/LICENSE&quot;)
+
+# Generate different output formats
+evidence = detector.generate_evidence([result])
+kissbom = detector.generate_kissbom([result])
+cyclonedx = detector.generate_cyclonedx([result], format_type=&quot;json&quot;)
+cyclonedx_xml = detector.generate_cyclonedx([result], format_type=&quot;xml&quot;)
+
+# Access results directly
+for license in result.licenses:
+    print(f&quot;License: {license.spdx_id} ({license.confidence:.0%} confidence)&quot;)
+    print(f&quot;  Category: {license.category}&quot;)  # declared, detected, or referenced
+for copyright in result.copyrights:
+    print(f&quot;Copyright: © {copyright.holder}&quot;)
+</code></pre>
+<h2 id="output-format">Output Format</h2>
+<p>The tool outputs JSON evidence showing:
+- <strong>File path</strong>: Where the license was found
+- <strong>Detected license</strong>: The SPDX identifier of the license
+- <strong>Confidence</strong>: How confident the detection is (0.0 to 1.0)
+- <strong>Match type</strong>: How the license was detected (license_text, spdx_identifier, license_reference, text_similarity)
+- <strong>Description</strong>: Human-readable description of what was found</p>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>OSS License &amp; Copyright Detector is a core component of the SEMCL.ONE ecosystem:</p>
+<ul>
+<li>Works with <strong>purl2notices</strong> for comprehensive legal notice generation</li>
+<li>Integrates with <strong>ospac</strong> for policy-based compliance evaluation</li>
+<li>Supports <strong>ossnotices</strong> for simplified attribution documentation</li>
+<li>Complements <strong>upmex</strong> for package metadata extraction workflows</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Create a <code>config.yaml</code> file:</p>
+<pre><code class="language-yaml">similarity_threshold: 0.97
+max_recursion_depth: 10
+max_extraction_depth: 10
+thread_count: 4
+cache_dir: &quot;~/.cache/osslili&quot;
+custom_aliases:
+  &quot;Apache 2&quot;: &quot;Apache-2.0&quot;
+  &quot;MIT License&quot;: &quot;MIT&quot;
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/USAGE.md">User Guide</a> - Comprehensive usage examples and configuration</li>
+<li><a href="docs/API.md">API Reference</a> - Python API documentation and examples</li>
+<li><a href="docs/SPDX.md">SPDX Updates</a> - How to update SPDX license data</li>
+<li><a href="docs/BENCHMARK_SCANCODE.md">Performance Benchmarks</a> - Comparison with other tools</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Reporting issues</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/osslili/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/osslili">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../purl2src/" class="btn btn-neutral float-left" title="purl2src"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../upmex/" class="btn btn-neutral float-right" title="upmex">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../purl2src/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../upmex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

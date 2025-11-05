@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/ossnotices/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>ossnotices - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ossnotices";
+        var mkdocs_page_input_path = "ossnotices/README.md";
+        var mkdocs_page_url = "/Repo_docs/ossnotices/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">ossnotices</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#command-line-options">Command Line Options</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-input-types">Supported Input Types</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-package-ecosystems">Supported Package Ecosystems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">ossnotices</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/ossnotices/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="oss-notices-generator-simplified-legal-notices-for-open-source-projects">OSS Notices Generator - Simplified Legal Notices for Open Source Projects</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/ossnotices/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/ossnotices.svg" /></a></p>
+<p>A streamlined tool for generating legal notices from open source dependencies. Built on the powerful <a href="https://github.com/SemClone/purl2notices">purl2notices</a> library, ossnotices provides a simple interface for scanning source code and producing attribution documentation required for OSS compliance.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Simple Interface</strong>: Streamlined CLI for scanning local source code and archives</li>
+<li><strong>Multi-Format Support</strong>: Generate notices in text, HTML, or JSON formats</li>
+<li><strong>Archive Processing</strong>: Handle JAR, WAR, WHL, ZIP, and other archive formats</li>
+<li><strong>SEMCL.ONE Integration</strong>: Seamlessly works with other ecosystem tools for comprehensive compliance workflows</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install ossnotices
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/ossnotices.git
+cd ossnotices
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Scan current directory and generate default NOTICE.txt
+ossnotices
+
+# Process a specific project directory
+ossnotices ./my-project --recursive -o NOTICE.txt
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Basic directory scanning
+ossnotices ./src --recursive -o NOTICE.txt
+
+# Process archive files
+ossnotices library.jar -o NOTICE.txt
+
+# Generate HTML format for documentation
+ossnotices ./project -f html -o notices.html
+
+# JSON output for further processing
+ossnotices ./project -f json -o notices.json
+
+# Quiet mode for CI/CD pipelines
+ossnotices . -q -o NOTICE.txt
+</code></pre>
+<h3 id="command-line-options">Command Line Options</h3>
+<pre><code>Usage: ossnotices [OPTIONS] [PATH]
+
+Arguments:
+  PATH                   Directory or archive file to scan (default: current directory)
+
+Options:
+  --version              Show version and exit
+  -o, --output PATH      Output file path (default: NOTICE.txt)
+  -f, --format TYPE      Output format: text, html, json (default: text)
+  -r, --recursive        Scan directories recursively
+  --cache/--no-cache     Enable/disable caching (default: enabled)
+  -v, --verbose          Enable verbose output
+  -q, --quiet           Suppress all output except errors
+  --help                Show help and exit
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>Caching is enabled by default and stores package information in <code>.ossnotices.cache.json</code> for faster subsequent runs.</p>
+<pre><code class="language-bash"># Disable caching
+ossnotices . --no-cache
+</code></pre>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>OSS Notices Generator is part of the comprehensive SEMCL.ONE compliance ecosystem:</p>
+<ul>
+<li>Works with <strong>src2purl</strong> for package identification</li>
+<li>Integrates with <strong>purl2notices</strong> for detailed attribution generation</li>
+<li>Complements <strong>osslili</strong> for license detection</li>
+<li>Supports <strong>upmex</strong> package metadata extraction</li>
+</ul>
+<h2 id="supported-input-types">Supported Input Types</h2>
+<ul>
+<li><strong>Source Directories</strong>: Recursively scans for package dependencies</li>
+<li><strong>Archive Files</strong>: JAR, WAR, WHL, ZIP, TAR, GZ, BZ2, EGG formats</li>
+</ul>
+<h2 id="supported-package-ecosystems">Supported Package Ecosystems</h2>
+<p>Through purl2notices integration:
+- Python (PyPI)
+- JavaScript/Node.js (npm)
+- Java (Maven)
+- Ruby (RubyGems)
+- Go modules
+- Rust (Cargo)
+- .NET (NuGet)
+- PHP (Composer)
+- And many more...</p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/user-guide.md">User Guide</a> - Comprehensive usage examples</li>
+<li><a href="docs/api.md">API Reference</a> - Python API documentation</li>
+<li><a href="docs/examples.md">Examples</a> - Common workflows and integration patterns</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Reporting issues</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/ossnotices/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/ossnotices">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ospac/" class="btn btn-neutral float-left" title="ospac"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about-mkdocs/" class="btn btn-neutral float-right" title="Acerca de MkDocs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../ospac/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about-mkdocs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

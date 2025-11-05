@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/binarysniffer/README_ORIGINAL/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>BinarySniffer - Binary Static Analyzer - Centro de Documentación</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "BinarySniffer - Binary Static Analyzer";
+        var mkdocs_page_input_path = "binarysniffer/README_ORIGINAL.md";
+        var mkdocs_page_url = "/Repo_docs/binarysniffer/README_ORIGINAL/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SemClone Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">BinarySniffer - Binary Static Analyzer</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/binarysniffer/edit/main/docs/README_ORIGINAL.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="binarysniffer-binary-static-analyzer">BinarySniffer - Binary Static Analyzer</h1>
+<p>A high-performance CLI tool and Python library for detecting open source components and security threats in binaries through semantic signature matching. Specialized for analyzing mobile apps (APK/IPA), Java archives, ML models, and source code to identify OSS components, their licenses, and potential security risks.</p>
+<h2 id="features">Features</h2>
+<h3 id="core-analysis">Core Analysis</h3>
+<ul>
+<li><strong>Fuzzy Matching</strong>: Detect modified, recompiled, or patched OSS components using TLSH</li>
+<li><strong>Deterministic Results</strong>: Consistent analysis results across multiple runs</li>
+<li><strong>Fast Local Analysis</strong>: SQLite-based signature storage with optimized direct matching</li>
+<li><strong>Efficient Matching</strong>: MinHash LSH for similarity detection, trigram indexing for substring matching</li>
+<li><strong>Dual Interface</strong>: Use as CLI tool or Python library</li>
+<li><strong>Smart Compression</strong>: ZSTD-compressed signatures with ~90% size reduction</li>
+<li><strong>Low Memory Footprint</strong>: Streaming analysis with &lt;100MB memory usage</li>
+</ul>
+<h3 id="sbom-export-support">SBOM Export Support</h3>
+<ul>
+<li><strong>CycloneDX Format</strong>: Industry-standard SBOM export for security and compliance toolchains</li>
+<li><strong>File Path Tracking</strong>: Evidence includes file paths for component location tracking</li>
+<li><strong>Feature Extraction</strong>: Optional feature dump for signature recreation</li>
+<li><strong>Confidence Scores</strong>: All detections include confidence levels in SBOM</li>
+<li><strong>Multi-file Support</strong>: Aggregate SBOM for entire projects</li>
+</ul>
+<h3 id="package-inventory-extraction">Package Inventory Extraction</h3>
+<ul>
+<li><strong>Comprehensive File Enumeration</strong>: Extract complete file listings from archives</li>
+<li><strong>Rich Metadata</strong>: MIME types, compression ratios, file sizes, timestamps</li>
+<li><strong>Hash Calculation</strong>: MD5, SHA1, SHA256 for integrity verification</li>
+<li><strong>Fuzzy Hashing</strong>: TLSH and ssdeep for similarity analysis</li>
+<li><strong>Component Detection</strong>: Run OSS detection on individual files within packages</li>
+<li><strong>Multiple Export Formats</strong>: JSON, CSV, tree visualization, summary reports</li>
+</ul>
+<h3 id="binary-analysis">Binary Analysis</h3>
+<ul>
+<li><strong>Advanced Format Support</strong>: ELF, PE, Mach-O analysis with symbol and import extraction via LIEF</li>
+<li><strong>Static Library Support</strong>: Parse and analyze .a archives, examining each object file separately</li>
+<li><strong>Android DEX Support</strong>: Specialized extractor for DEX bytecode files</li>
+<li><strong>Improved Detection</strong>: 25+ components detected in APK files with 152K+ features extracted</li>
+<li><strong>Substring Matching</strong>: Detects components even with partial pattern matches</li>
+<li><strong>Progress Indication</strong>: Real-time progress bars for long analysis operations</li>
+</ul>
+<h3 id="archive-support">Archive Support</h3>
+<ul>
+<li><strong>Mobile Applications</strong>: Android APK and iOS IPA with manifest parsing and native library analysis</li>
+<li><strong>Java Archives</strong>: JAR/WAR files with MANIFEST.MF parsing and package detection</li>
+<li><strong>Python Packages</strong>: Wheels (.whl) and eggs (.egg) with metadata extraction</li>
+<li><strong>Linux Packages</strong>: DEB (Debian/Ubuntu) and RPM (Red Hat/Fedora) packages</li>
+<li><strong>Extended Formats</strong>: 7z, RAR, Zstandard (.zst, .tar.zst), CPIO</li>
+<li><strong>Nested Archives</strong>: Handle archives containing other archives (up to 5 levels deep)</li>
+<li><strong>Intelligent Extraction</strong>: Prioritizes binaries, bytecode, and source files for analysis</li>
+</ul>
+<h3 id="source-code-analysis">Source Code Analysis</h3>
+<ul>
+<li><strong>CTags Integration</strong>: Advanced source code analysis when universal-ctags is available</li>
+<li><strong>Multi-language Support</strong>: C/C++, Python, Java, JavaScript, Go, Rust, PHP, Swift, Kotlin</li>
+<li><strong>Semantic Symbol Extraction</strong>: Functions, classes, structs, constants, and dependencies</li>
+<li><strong>Graceful Fallback</strong>: Regex-based extraction when CTags is unavailable</li>
+</ul>
+<h3 id="ml-model-security-analysis-v1100">ML Model Security Analysis (v1.10.0+)</h3>
+<ul>
+<li><strong>Comprehensive Security Module</strong>: Deep analysis of ML models for security threats</li>
+<li><strong>MITRE ATT&amp;CK Integration</strong>: Maps threats to ATT&amp;CK framework techniques</li>
+<li><strong>Multi-Level Risk Assessment</strong>: SAFE, LOW, MEDIUM, HIGH, CRITICAL risk levels</li>
+<li><strong>Pickle File Parser</strong>: Safe analysis of Python pickle files without code execution</li>
+<li><strong>ONNX Model Parser</strong>: Comprehensive analysis of ONNX format models</li>
+<li><strong>SafeTensors Parser</strong>: Validation of secure tensor storage format</li>
+<li><strong>PyTorch/TensorFlow Native</strong>: Handles .pt, .pth, .pb, .h5 native formats</li>
+<li><strong>Malicious Detection</strong>: 100% detection rate on real-world ML exploits</li>
+<li><strong>Framework Detection</strong>: Identifies PyTorch (96%), TensorFlow, sklearn (94%), XGBoost (77%) origins</li>
+<li><strong>Obfuscation Detection</strong>: Entropy analysis and pattern matching for hidden threats</li>
+<li><strong>Model Integrity Validation</strong>: Hash verification and tampering detection</li>
+<li><strong>Architecture Recognition</strong>: Detects ResNet, BERT, YOLO, LLaMA, ViT, etc.</li>
+<li><strong>Format Validation</strong>: Detects tampering, injection attempts, and format violations</li>
+<li><strong>Malformed File Detection</strong>: Identifies corrupted or invalid model files with clear warnings</li>
+<li><strong>Data Exfiltration Detection</strong>: Flags oversized tensors and suspicious patterns</li>
+<li><strong>Supply Chain Security</strong>: Verifies model provenance and integrity</li>
+<li><strong>SARIF Output</strong>: CI/CD integration with GitHub Actions and security tools</li>
+<li><strong>Security-Enhanced SBOM</strong>: CycloneDX format with ML security metadata</li>
+</ul>
+<h3 id="signature-database">Signature Database</h3>
+<ul>
+<li><strong>188 OSS Components</strong>: Comprehensive coverage including libraries, frameworks, ML models, and multimedia codecs</li>
+<li><strong>1,400+ Total Signatures</strong>: High-quality patterns with improved accuracy and reduced false positives</li>
+<li><strong>Multimedia Support</strong>: H.264/H.265, AAC, Dolby, AV1, GStreamer, GLib, FFmpeg components</li>
+<li><strong>System Libraries</strong>: libcap, Expat XML, LZ4, XZ Utils, WebP, cURL, Cairo, Opus</li>
+<li><strong>License Detection</strong>: Automatic license identification for detected components</li>
+<li><strong>Security Analysis</strong>: Detection of malicious patterns with severity levels (CRITICAL, HIGH, MEDIUM, LOW)</li>
+<li><strong>Rich Metadata</strong>: Publisher, version, and ecosystem information for each component</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="from-pypi">From PyPI</h3>
+<pre><code class="language-bash">pip install binarysniffer
+</code></pre>
+<h3 id="from-source">From Source</h3>
+<pre><code class="language-bash">git clone https://github.com/SemClone/binarysniffer
+cd binarysniffer
+pip install -e .
+</code></pre>
+<h3 id="with-performance-extras">With Performance Extras</h3>
+<pre><code class="language-bash">pip install binarysniffer[fast]
+</code></pre>
+<h3 id="with-fuzzy-matching-support">With Fuzzy Matching Support</h3>
+<pre><code class="language-bash"># Includes TLSH for detecting modified/recompiled components
+pip install binarysniffer[fuzzy]
+</code></pre>
+<h3 id="with-extended-archive-support">With Extended Archive Support</h3>
+<pre><code class="language-bash"># Includes support for 7z, RAR, DEB, RPM formats
+pip install binarysniffer[archives]
+</code></pre>
+<h3 id="with-android-apk-analysis">With Android APK Analysis</h3>
+<pre><code class="language-bash"># Includes Androguard for advanced APK analysis
+pip install binarysniffer[android]
+</code></pre>
+<h2 id="optional-tools-for-enhanced-format-support">Optional Tools for Enhanced Format Support</h2>
+<p>BinarySniffer can leverage external tools when available to provide enhanced analysis capabilities. These tools are <strong>optional</strong> - the core functionality works without them, but installing them unlocks additional features.</p>
+<h3 id="quick-reference-archive-format-requirements">Quick Reference: Archive Format Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Python Package</th>
+<th>System Tool (Alternative)</th>
+<th>Fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7z</td>
+<td>py7zr (included)</td>
+<td>7-Zip</td>
+<td>-</td>
+</tr>
+<tr>
+<td>RAR</td>
+<td>rarfile (included)</td>
+<td>unrar</td>
+<td>7-Zip</td>
+</tr>
+<tr>
+<td>DEB</td>
+<td>python-debian (included)</td>
+<td>ar</td>
+<td>7-Zip</td>
+</tr>
+<tr>
+<td>RPM</td>
+<td>-</td>
+<td>rpm2cpio</td>
+<td>7-Zip</td>
+</tr>
+<tr>
+<td>ZIP/JAR</td>
+<td>Built-in</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>TAR/GZ</td>
+<td>Built-in</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-zip-recommended">7-Zip (Recommended)</h3>
+<p><strong>Enables</strong>: Extraction and analysis of Windows installers, macOS packages, and additional compressed formats</p>
+<pre><code class="language-bash"># macOS
+brew install p7zip
+
+# Ubuntu/Debian
+sudo apt-get install p7zip-full
+
+# Windows
+# Download from https://www.7-zip.org/
+</code></pre>
+<p><strong>Benefits</strong>:
+- Analyze Windows installers (.exe, .msi) by extracting embedded components
+- Analyze macOS installers (.pkg, .dmg) to detect bundled frameworks
+- Support for NSIS, InnoSetup, and other installer formats
+- Extract and analyze self-extracting archives
+- Support for additional archive formats (RAR, CAB, ISO, etc.)</p>
+<h3 id="tools-for-extended-archive-support-optional">Tools for Extended Archive Support (Optional)</h3>
+<p>When using the <code>[archives]</code> installation option, these tools enhance format support:</p>
+<h4 id="deb-package-analysis">DEB Package Analysis</h4>
+<pre><code class="language-bash"># For DEB packages (Debian/Ubuntu)
+# Option 1: Install python-debian (included with [archives])
+pip install binarysniffer[archives]
+
+# Option 2: Use system ar command (usually pre-installed)
+# Ubuntu/Debian
+which ar  # Check if available
+
+# macOS
+# ar is included with Xcode Command Line Tools
+xcode-select --install  # If not already installed
+</code></pre>
+<h4 id="rpm-package-analysis">RPM Package Analysis</h4>
+<pre><code class="language-bash"># For RPM packages (Red Hat/Fedora/CentOS)
+# Option 1: Install rpm2cpio
+# Ubuntu/Debian
+sudo apt-get install rpm2cpio
+
+# macOS
+brew install rpm2cpio
+
+# Fedora/RHEL/CentOS
+# rpm2cpio is usually pre-installed
+
+# Option 2: Falls back to 7-Zip if available
+</code></pre>
+<h4 id="additional-archive-formats">Additional Archive Formats</h4>
+<p>The <code>[archives]</code> option includes Python libraries for:
+- <strong>7z files</strong>: py7zr (pure Python, no external tools needed)
+- <strong>RAR files</strong>: rarfile (requires unrar tool)
+  ```bash
+  # Install unrar for RAR support
+  # Ubuntu/Debian
+  sudo apt-get install unrar</p>
+<p># macOS
+  brew install unrar</p>
+<p># Note: Falls back to 7-Zip if unrar not available
+  ```</p>
+<h3 id="universal-ctags-optional">Universal CTags (Optional)</h3>
+<p><strong>Enables</strong>: Enhanced source code analysis with semantic understanding</p>
+<pre><code class="language-bash"># macOS
+brew install universal-ctags
+
+# Ubuntu/Debian
+sudo apt-get install universal-ctags
+
+# Windows
+# Download from https://github.com/universal-ctags/ctags-win32/releases
+</code></pre>
+<p><strong>Benefits</strong>:
+- Better function/class/method detection in source code
+- Multi-language semantic analysis
+- More accurate symbol extraction
+- Improved signature matching for source code components</p>
+<h3 id="example-analyzing-installers">Example: Analyzing Installers</h3>
+<p>Without 7-Zip:</p>
+<pre><code class="language-bash">$ binarysniffer analyze installer.exe
+# Analyzes as compressed binary - limited detection
+</code></pre>
+<p>With 7-Zip installed:</p>
+<pre><code class="language-bash"># Windows installers
+$ binarysniffer analyze installer.exe
+$ binarysniffer analyze setup.msi
+# Automatically extracts and analyzes contents
+# Detects: Qt5, OpenSSL, SQLite, ICU, libpng, etc.
+
+# macOS installers
+$ binarysniffer analyze app.pkg
+$ binarysniffer analyze app.dmg
+# Automatically extracts and analyzes contents
+# Detects: Qt5, WebKit, OpenCV, React Native, etc.
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Basic analysis
+binarysniffer analyze /path/to/binary
+binarysniffer analyze app.apk                    # Android APK
+binarysniffer analyze app.ipa                    # iOS IPA
+binarysniffer analyze library.jar                # Java JAR
+
+# ML model component detection
+binarysniffer analyze model.pkl                  # Pickle files
+binarysniffer analyze model.onnx                 # ONNX models
+binarysniffer analyze model.safetensors          # SafeTensors format
+binarysniffer analyze suspicious_model.pkl --show-features  # Detailed analysis
+
+# ML model security scanning (v1.10.0+)
+binarysniffer ml-scan model.pkl                  # Security analysis of ML models
+binarysniffer ml-scan model.pkl --deep           # Deep security analysis
+binarysniffer ml-scan models/ -r --format sarif  # SARIF output for CI/CD
+binarysniffer ml-scan model.pkl -o report.md     # Markdown security report
+binarysniffer ml-scan model.pkl --risk-threshold 0.5  # Custom risk threshold
+
+# Analyze directories recursively
+binarysniffer analyze /path/to/project -r
+
+# Output with auto-format detection
+binarysniffer analyze app.apk -o report.json     # Auto-detects JSON format
+binarysniffer analyze app.apk -o report.csv      # Auto-detects CSV format
+binarysniffer analyze app.apk -o app.sbom        # Auto-detects SBOM format
+
+# Performance modes
+binarysniffer analyze large.bin --fast           # Quick scan (no fuzzy matching)
+binarysniffer analyze app.apk --deep             # Thorough analysis
+
+# Custom confidence threshold
+binarysniffer analyze file.exe -t 0.3            # More sensitive (30% confidence)
+binarysniffer analyze file.exe -t 0.8            # More conservative (80% confidence)
+
+# Include file hashes in output
+binarysniffer analyze file.exe --with-hashes -o report.json
+binarysniffer analyze file.exe --basic-hashes    # Only MD5, SHA1, SHA256
+
+# Filter by file patterns
+binarysniffer analyze project/ -r -p &quot;*.so&quot; -p &quot;*.dll&quot;
+
+# Export as CycloneDX SBOM
+binarysniffer analyze app.apk -f sbom -o app-sbom.json
+binarysniffer analyze app.apk --format cyclonedx -o sbom.json
+
+# Save features for signature creation
+binarysniffer analyze binary.exe --save-features features.json --show-features
+
+# Filter results
+binarysniffer analyze lib.so --min-matches 5     # Show components with 5+ matches
+binarysniffer analyze app.apk --show-evidence    # Show detailed match evidence
+</code></pre>
+<h3 id="understanding-the-output">Understanding the Output</h3>
+<p>The analysis results display a <strong>Classification</strong> column that shows either:
+- <strong>Software licenses</strong> (e.g., Apache-2.0, BSD-3-Clause, MIT) for legitimate OSS components
+- <strong>Security severity levels</strong> (CRITICAL, HIGH, MEDIUM, LOW) for detected threats</p>
+<p>Example output:</p>
+<pre><code>┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+┃ Component        ┃ Confidence ┃ Classification ┃ Type   ┃ Evidence         ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+│ PyTorch-Native   │ 94.0%      │ BSD-3-Clause   │ library│ 2 patterns       │
+│ SafeTensors      │ 90.0%      │ Apache-2.0     │ library│ 3 patterns       │
+│ Pickle-Malicious │ 98.5%      │ CRITICAL       │ threat │ RCE risk detected│
+└──────────────────┴────────────┴────────────────┴────────┴──────────────────┘
+</code></pre>
+<h3 id="python-library-usage">Python Library Usage</h3>
+<pre><code class="language-python">from binarysniffer import EnhancedBinarySniffer
+
+# Initialize analyzer (enhanced mode is default)
+sniffer = EnhancedBinarySniffer()
+
+# Analyze a single file
+result = sniffer.analyze_file(&quot;/path/to/binary&quot;)
+for match in result.matches:
+    print(f&quot;{match.component} - {match.confidence:.2%}&quot;)
+    print(f&quot;Classification: {match.license}&quot;)  # Shows license or severity level
+
+# Analyze mobile applications
+apk_result = sniffer.analyze_file(&quot;app.apk&quot;)
+ipa_result = sniffer.analyze_file(&quot;app.ipa&quot;)
+jar_result = sniffer.analyze_file(&quot;library.jar&quot;)
+
+# Analyze with custom threshold (default is 0.5)
+result = sniffer.analyze_file(&quot;file.exe&quot;, confidence_threshold=0.3)  # More sensitive
+result = sniffer.analyze_file(&quot;file.exe&quot;, confidence_threshold=0.8)  # More conservative
+
+# Analyze with file hashes
+result = sniffer.analyze_file(&quot;file.exe&quot;, include_hashes=True, include_fuzzy_hashes=True)
+
+# Directory analysis
+results = sniffer.analyze_directory(&quot;/path/to/project&quot;, recursive=True)
+for file_path, result in results.items():
+    if result.matches:
+        print(f&quot;{file_path}: {len(result.matches)} components detected&quot;)
+
+# TLSH fuzzy matching for modified components
+result = sniffer.analyze_file(
+    &quot;modified_binary.exe&quot;,
+    use_tlsh=True,              # Enable TLSH fuzzy matching (default)
+    tlsh_threshold=50           # Lower threshold = more similar required
+)
+for match in result.matches:
+    if match.match_type == 'tlsh_fuzzy':
+        print(f&quot;Fuzzy match: {match.component} (similarity: {match.confidence:.0%})&quot;)
+</code></pre>
+<h3 id="sbom-export-v186">SBOM Export (v1.8.6+)</h3>
+<p>Generate Software Bill of Materials in CycloneDX format for integration with security and compliance tools:</p>
+<pre><code class="language-bash"># Export single file analysis as SBOM
+binarysniffer analyze app.apk --format cyclonedx -o app-sbom.json
+
+# Export directory analysis as aggregated SBOM
+binarysniffer analyze project/ -r --format cdx -o project-sbom.json
+
+# Include extracted features for signature recreation
+binarysniffer analyze binary.exe --format cyclonedx --show-features -o sbom-with-features.json
+</code></pre>
+<p>The SBOM includes:
+- Component names, versions, and licenses
+- Confidence scores for each detection
+- File paths showing where components were found
+- Evidence details including matched patterns
+- Optional extracted features for signature recreation</p>
+<h3 id="package-inventory-extraction-v186">Package Inventory Extraction (v1.8.6+)</h3>
+<p>Extract comprehensive file inventories from packages with metadata, hashes, and component detection:</p>
+<pre><code class="language-bash"># Basic inventory summary
+binarysniffer inventory app.apk
+
+# Export full inventory with auto-format detection
+binarysniffer inventory app.apk -o inventory.json
+binarysniffer inventory app.jar -o files.csv
+
+# Include file hashes (MD5, SHA1, SHA256, TLSH, ssdeep)
+binarysniffer inventory app.jar --analyze --with-hashes -o files.csv
+
+# Full analysis with component detection
+binarysniffer inventory app.ipa \
+  --analyze \
+  --with-hashes \
+  --with-components \
+  -o full_inventory.json
+
+# Export as directory tree visualization
+binarysniffer inventory archive.zip --format tree -o structure.txt
+</code></pre>
+<h4 id="python-api-for-inventory-extraction">Python API for Inventory Extraction</h4>
+<pre><code class="language-python">from binarysniffer import EnhancedBinarySniffer
+
+sniffer = EnhancedBinarySniffer()
+
+# Basic inventory extraction
+inventory = sniffer.extract_package_inventory(&quot;app.apk&quot;)
+print(f&quot;Total files: {inventory['summary']['total_files']}&quot;)
+print(f&quot;Package size: {inventory['package_size']:,} bytes&quot;)
+
+# Full analysis with all features
+inventory = sniffer.extract_package_inventory(
+    &quot;app.apk&quot;,
+    analyze_contents=True,        # Extract and analyze file contents
+    include_hashes=True,          # Calculate MD5, SHA1, SHA256
+    include_fuzzy_hashes=True,    # Calculate TLSH and ssdeep
+    detect_components=True        # Run OSS component detection
+)
+
+# Access comprehensive file metadata
+for file_entry in inventory['files']:
+    if not file_entry['is_directory']:
+        print(f&quot;File: {file_entry['path']}&quot;)
+        print(f&quot;  MIME: {file_entry['mime_type']}&quot;)
+        print(f&quot;  Size: {file_entry['size']:,} bytes&quot;)
+        print(f&quot;  Compression ratio: {file_entry['compression_ratio']:.1%}&quot;)
+
+        if 'hashes' in file_entry:
+            print(f&quot;  SHA256: {file_entry['hashes']['sha256']}&quot;)
+
+        if 'components' in file_entry:
+            for comp in file_entry['components']:
+                print(f&quot;  Component: {comp['name']} ({comp['confidence']:.0%})&quot;)
+</code></pre>
+<h4 id="inventory-export-formats">Inventory Export Formats</h4>
+<ul>
+<li><strong>JSON</strong>: Complete structured data with all metadata</li>
+<li><strong>CSV</strong>: Tabular format for data analysis (includes hashes, MIME types, components)</li>
+<li><strong>Tree</strong>: Visual directory structure representation</li>
+<li><strong>Summary</strong>: Quick overview with file type statistics</li>
+</ul>
+<h3 id="license-detection-v189">License Detection (v1.8.9+)</h3>
+<p>Detect and analyze software licenses using pattern matching and SPDX identifier recognition:</p>
+<pre><code class="language-bash"># Analyze licenses in a file or directory
+binarysniffer license /path/to/project
+
+# Check license compatibility
+binarysniffer license . --check-compatibility
+
+# Show which files contain each license
+binarysniffer license src/ --show-files
+
+# Export license report
+binarysniffer license app.apk -o licenses.json
+binarysniffer license project/ -o report.md --format markdown
+</code></pre>
+<h4 id="integrated-license-detection-with-analysis">Integrated License Detection with Analysis</h4>
+<p>Combine component and license detection in a single analysis:</p>
+<pre><code class="language-bash"># Add license detection to regular analysis
+binarysniffer analyze app.jar --license-focus
+
+# Perform only license detection (skip component analysis)
+binarysniffer analyze source/ --license-only
+</code></pre>
+<h4 id="python-api-for-license-detection">Python API for License Detection</h4>
+<pre><code class="language-python">from binarysniffer import EnhancedBinarySniffer
+
+sniffer = EnhancedBinarySniffer()
+
+# Analyze licenses in a project
+license_result = sniffer.analyze_licenses(&quot;/path/to/project&quot;)
+print(f&quot;Detected licenses: {', '.join(license_result['licenses_detected'])}&quot;)
+
+# Check compatibility
+compatibility = license_result['compatibility']
+if not compatibility['compatible']:
+    for warning in compatibility['warnings']:
+        print(f&quot;Warning: {warning}&quot;)
+</code></pre>
+<h4 id="features_1">Features</h4>
+<ul>
+<li><strong>Pattern-based detection</strong> for common licenses (MIT, Apache-2.0, GPL, BSD, LGPL, ISC)</li>
+<li><strong>SPDX identifier support</strong> with 100% confidence</li>
+<li><strong>License compatibility checking</strong> to identify conflicts</li>
+<li><strong>Multiple output formats</strong>: Table, JSON, CSV, Markdown</li>
+<li><strong>Works on</strong>: License files, source code with embedded licenses, archives</li>
+</ul>
+<h3 id="creating-and-contributing-signatures">Creating and Contributing Signatures</h3>
+<h4 id="generate-signatures-from-binaries-or-source-code">Generate Signatures from Binaries or Source Code</h4>
+<p>Create custom signatures for components you want to detect:</p>
+<pre><code class="language-bash"># From binary files (recommended for compiled components)
+binarysniffer signatures create /usr/bin/ffmpeg --name FFmpeg --version 4.4.1
+
+# From source code directories
+binarysniffer signatures create /path/to/source --name MyLibrary --license MIT
+
+# With complete metadata for better attribution
+binarysniffer signatures create binary.so \
+  --name &quot;My Component&quot; \
+  --version 2.0.0 \
+  --license Apache-2.0 \
+  --publisher &quot;My Company&quot; \
+  --description &quot;Component description&quot; \
+  --output signatures/my-component.json
+
+# Specify minimum signature requirements
+binarysniffer signatures create /path/to/library \
+  --name &quot;LibraryName&quot; \
+  --min-signatures 10  # Require at least 10 unique patterns
+</code></pre>
+<h4 id="collision-detection-for-signature-quality">Collision Detection for Signature Quality</h4>
+<p>The signature generator includes automatic collision detection to identify patterns that appear in multiple existing components:</p>
+<pre><code class="language-bash"># Check for collisions with existing signatures
+binarysniffer signatures create /usr/bin/myapp \
+  --name &quot;MyApp&quot; \
+  --check-collisions
+
+# Interactive review - decide on each collision
+binarysniffer signatures create /usr/bin/myapp \
+  --name &quot;MyApp&quot; \
+  --interactive
+
+# Auto-remove patterns with high collision severity
+binarysniffer signatures create /usr/bin/myapp \
+  --name &quot;MyApp&quot; \
+  --check-collisions \
+  --collision-threshold high  # Remove patterns in 3+ components
+</code></pre>
+<p><strong>Collision Severity Levels:</strong>
+- <strong>Critical</strong>: Pattern appears in 5+ unrelated components (likely generic)
+- <strong>High</strong>: Pattern appears in 3-4 components
+- <strong>Medium</strong>: Pattern appears in 2 unrelated components<br />
+- <strong>Low</strong>: Pattern appears in 2 related components (e.g., ffmpeg/libav)</p>
+<p><strong>Features:</strong>
+- Automatic generic word filtering (100+ common programming terms)
+- Smart deduplication - all signatures are unique
+- Cross-signature collision detection
+- Interactive and automatic filtering modes
+- Preserves library-specific prefixes (av_, curl_, SSL_, etc.)</p>
+<h4 id="contributing-signatures-to-the-community">Contributing Signatures to the Community</h4>
+<p>Help improve detection by contributing your signatures:</p>
+<ol>
+<li>
+<p><strong>Generate the signature file</strong>:
+   <code>bash
+   binarysniffer signatures create /path/to/component \
+     --name "Component Name" \
+     --version "1.0.0" \
+     --license "MIT" \
+     --publisher "Publisher Name" \
+     --output signatures/component-name.json</code></p>
+</li>
+<li>
+<p><strong>Test your signature</strong>:
+   ```bash
+   # Import locally for testing
+   binarysniffer signatures import signatures/component-name.json</p>
+</li>
+</ol>
+<p># Verify detection works
+   binarysniffer analyze /path/to/test/binary
+   ```</p>
+<ol>
+<li><strong>Submit via GitHub Pull Request</strong>:
+   ```bash
+   # Fork the repository on GitHub, then:
+   git clone https://github.com/YOUR_USERNAME/binarysniffer
+   cd binarysniffer</li>
+</ol>
+<p># Add your signature file
+   cp /path/to/component-name.json signatures/</p>
+<p># Commit and push
+   git add signatures/component-name.json
+   git commit -m "Add signatures for Component Name v1.0.0"
+   git push origin main</p>
+<p># Create a Pull Request on GitHub
+   ```</p>
+<p>For detailed contribution guidelines, see <a href="../CONTRIBUTING/">CONTRIBUTING.md</a>.</p>
+<h2 id="architecture">Architecture</h2>
+<p>The tool uses a multi-tiered approach for efficient matching:</p>
+<ol>
+<li><strong>Pattern Matching</strong>: Direct string/symbol matching against signature database</li>
+<li><strong>MinHash LSH</strong>: Fast similarity search for near-duplicate detection (milliseconds)</li>
+<li><strong>TLSH Fuzzy Matching</strong>: Locality-sensitive hashing to detect modified/recompiled components</li>
+<li><strong>Detailed Verification</strong>: Precise signature verification with confidence scoring</li>
+</ol>
+<h3 id="tlsh-fuzzy-matching-v180">TLSH Fuzzy Matching (v1.8.0+)</h3>
+<p>TLSH (Trend Micro Locality Sensitive Hash) enables detection of:
+- <strong>Modified Components</strong>: Components with patches or custom modifications
+- <strong>Recompiled Binaries</strong>: Same source code compiled with different options
+- <strong>Version Variants</strong>: Different versions of the same library
+- <strong>Obfuscated Code</strong>: Components with mild obfuscation or optimization</p>
+<p>The TLSH algorithm generates a compact hash that remains similar even when files are modified, making it ideal for detecting OSS components that have been customized or rebuilt.</p>
+<h2 id="performance">Performance</h2>
+<ul>
+<li><strong>Analysis Speed</strong>: ~1 second per binary file (5x faster in v1.6.3)</li>
+<li><strong>Archive Processing</strong>: ~100-500ms for APK/IPA files (depends on contents)</li>
+<li><strong>Signature Storage</strong>: ~3.5MB database with 5,136 signatures from 131 components</li>
+<li><strong>Memory Usage</strong>: &lt;100MB during analysis, &lt;200MB for large archives</li>
+<li><strong>Deterministic Results</strong>: Consistent detection across runs (NEW in v1.6.3)</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Configuration file location: <code>~/.binarysniffer/config.json</code></p>
+<pre><code class="language-json">{
+  &quot;signature_sources&quot;: [
+    &quot;https://signatures.binarysniffer.io/core.xmdb&quot;
+  ],
+  &quot;cache_size_mb&quot;: 100,
+  &quot;parallel_workers&quot;: 4,
+  &quot;min_confidence&quot;: 0.5,
+  &quot;auto_update&quot;: true,
+  &quot;update_check_interval_days&quot;: 7
+}
+</code></pre>
+<h2 id="signature-database_1">Signature Database</h2>
+<p>The tool includes a pre-built signature database with <strong>131 OSS components</strong> including:
+- <strong>Mobile SDKs</strong>: Facebook Android SDK, Google Firebase, Google Ads
+- <strong>Java Libraries</strong>: Jackson, Apache Commons, Google Guava, Netty<br />
+- <strong>Media Libraries</strong>: FFmpeg, x264, x265, Vorbis, Opus
+- <strong>Crypto Libraries</strong>: Bounty Castle, mbedTLS variants
+- <strong>Development Tools</strong>: Lombok, Dagger, RxJava, OkHttp</p>
+<h3 id="signature-management">Signature Management</h3>
+<p>Maintaining an up-to-date signature database is critical for accurate detection. BinarySniffer provides comprehensive signature management commands:</p>
+<h4 id="viewing-signature-status">Viewing Signature Status</h4>
+<pre><code class="language-bash"># Check current signature database status
+binarysniffer signatures status
+# Shows: total signatures, components, last update, database location
+
+# View detailed statistics
+binarysniffer signatures stats
+# Shows: signatures per component, database size, index status
+</code></pre>
+<h4 id="updating-signatures">Updating Signatures</h4>
+<pre><code class="language-bash"># Update signatures from GitHub repository (recommended)
+binarysniffer signatures update
+# Pulls latest community-contributed signatures
+
+# Alternative update command (backward compatible)
+binarysniffer update
+
+# Force update even if current
+binarysniffer signatures update --force
+</code></pre>
+<h4 id="rebuilding-database">Rebuilding Database</h4>
+<pre><code class="language-bash"># Rebuild database from packaged signatures
+binarysniffer signatures rebuild
+# Useful when database is corrupted or needs fresh start
+
+# Import specific signature files
+binarysniffer signatures import signatures/*.json
+
+# Import from custom directory
+binarysniffer signatures import /path/to/signatures --recursive
+</code></pre>
+<h4 id="creating-custom-signatures">Creating Custom Signatures</h4>
+<pre><code class="language-bash"># Create signature from binary
+binarysniffer signatures create /usr/bin/curl \
+  --name &quot;curl&quot; \
+  --version 7.81.0 \
+  --license &quot;MIT&quot; \
+  --output signatures/curl.json
+
+# Create from source code directory
+binarysniffer signatures create /path/to/source \
+  --name &quot;MyLibrary&quot; \
+  --version 1.0.0 \
+  --license &quot;Apache-2.0&quot; \
+  --min-length 8  # Minimum pattern length
+
+# Create with metadata
+binarysniffer signatures create binary.so \
+  --name &quot;Custom Component&quot; \
+  --publisher &quot;My Company&quot; \
+  --description &quot;Custom implementation&quot; \
+  --url &quot;https://github.com/mycompany/component&quot;
+</code></pre>
+<h4 id="signature-validation">Signature Validation</h4>
+<pre><code class="language-bash"># Validate signature quality before adding
+binarysniffer signatures validate signatures/new-component.json
+# Checks for: generic patterns, minimum length, uniqueness
+
+# Test signature against known files
+binarysniffer signatures test signatures/component.json /path/to/test/files
+</code></pre>
+<h4 id="database-management">Database Management</h4>
+<pre><code class="language-bash"># Export signatures to JSON (for backup or sharing)
+binarysniffer signatures export --output my-signatures/
+# Creates one JSON file per component
+
+# Clear database (use with caution)
+binarysniffer signatures clear --confirm
+# Removes all signatures from database
+
+# Optimize database
+binarysniffer signatures optimize
+# Rebuilds indexes and vacuums database for better performance
+</code></pre>
+<h4 id="automated-updates">Automated Updates</h4>
+<p>Configure automatic signature updates in <code>~/.binarysniffer/config.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;auto_update&quot;: true,
+  &quot;update_check_interval_days&quot;: 7,
+  &quot;signature_sources&quot;: [
+    &quot;https://github.com/oscarvalenzuelab/binarysniffer-signatures&quot;
+  ]
+}
+</code></pre>
+<h4 id="best-practices">Best Practices</h4>
+<ol>
+<li><strong>Regular Updates</strong>: Run <code>binarysniffer signatures update</code> weekly for latest detections</li>
+<li><strong>Custom Signatures</strong>: Create signatures for proprietary components you want to track</li>
+<li><strong>Validation</strong>: Always validate new signatures to avoid false positives</li>
+<li><strong>Backup</strong>: Export signatures before major updates using <code>signatures export</code></li>
+<li><strong>Performance</strong>: Run <code>signatures optimize</code> monthly for best performance</li>
+</ol>
+<p>For detailed signature creation and management documentation, see <a href="docs/SIGNATURE_MANAGEMENT.md">docs/SIGNATURE_MANAGEMENT.md</a>.</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - See LICENSE file for details.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please read our <a href="../CONTRIBUTING/">Contributing Guide</a> for details on our code of conduct and the process for submitting pull requests.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

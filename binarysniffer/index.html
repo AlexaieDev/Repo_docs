@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/binarysniffer/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>binarysniffer - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "binarysniffer";
+        var mkdocs_page_input_path = "binarysniffer/README.md";
+        var mkdocs_page_url = "/Repo_docs/binarysniffer/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">binarysniffer</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python-api">Python API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#core-capabilities">Core Capabilities</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#binary-analysis">Binary Analysis</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#archive-support">Archive Support</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ml-model-security-v1100">ML Model Security (v1.10.0+)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#signature-database">Signature Database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-topics">Advanced Topics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">binarysniffer</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/binarysniffer/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="binarysniffer-binary-component-detection-and-security-analysis">BinarySniffer - Binary Component Detection and Security Analysis</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/binarysniffer/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/binarysniffer.svg" /></a></p>
+<p>A high-performance CLI tool and Python library for detecting open source components and security threats in binaries through semantic signature matching. Specialized for analyzing mobile apps (APK/IPA), Java archives, ML models, and source code to identify OSS components, their licenses, and potential security risks.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Binary Component Detection</strong>: Identify 188+ OSS components in compiled binaries using semantic signatures</li>
+<li><strong>ML Model Security Analysis</strong>: Comprehensive security scanning with MITRE ATT&amp;CK mapping</li>
+<li><strong>Multi-Format Support</strong>: APK/IPA, JAR/WAR, ELF/PE/Mach-O, ML models (pickle, ONNX, SafeTensors)</li>
+<li><strong>SEMCL.ONE Integration</strong>: Works seamlessly with osslili, purl2notices, and other ecosystem tools</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install binarysniffer
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/binarysniffer.git
+cd binarysniffer
+pip install -e .
+</code></pre>
+<p>With performance extras:</p>
+<pre><code class="language-bash">pip install binarysniffer[fast]
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Analyze a binary file
+binarysniffer analyze /path/to/binary
+
+# ML model security scan
+binarysniffer ml-scan model.pkl --deep
+
+# Generate SBOM
+binarysniffer analyze app.apk --format cyclonedx -o sbom.json
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Basic analysis
+binarysniffer analyze app.apk
+
+# ML model security analysis
+binarysniffer ml-scan model.pkl --risk-threshold 0.5
+
+# Directory scanning with recursion
+binarysniffer analyze /path/to/project -r
+
+# Generate CycloneDX SBOM
+binarysniffer analyze app.jar --format sbom -o app-sbom.json
+
+# Extract package inventory
+binarysniffer inventory app.apk --with-hashes -o inventory.json
+</code></pre>
+<h3 id="python-api">Python API</h3>
+<pre><code class="language-python">from binarysniffer import EnhancedBinarySniffer
+
+# Initialize analyzer
+sniffer = EnhancedBinarySniffer()
+
+# Analyze a file
+result = sniffer.analyze_file(&quot;app.apk&quot;)
+for match in result.matches:
+    print(f&quot;{match.component} - {match.confidence:.2%}&quot;)
+    print(f&quot;License: {match.license}&quot;)
+
+# ML security analysis
+from binarysniffer.ml_security import MLSecurityAnalyzer
+
+analyzer = MLSecurityAnalyzer()
+risks = analyzer.analyze_model(&quot;model.pkl&quot;)
+</code></pre>
+<h2 id="core-capabilities">Core Capabilities</h2>
+<h3 id="binary-analysis">Binary Analysis</h3>
+<ul>
+<li>Advanced format support (ELF, PE, Mach-O) via LIEF</li>
+<li>Android DEX bytecode analysis</li>
+<li>Static library (.a) support</li>
+<li>Symbol and import extraction</li>
+</ul>
+<h3 id="archive-support">Archive Support</h3>
+<ul>
+<li>Mobile apps (APK, IPA)</li>
+<li>Java archives (JAR, WAR)</li>
+<li>Python packages (wheel, egg)</li>
+<li>Linux packages (DEB, RPM)</li>
+<li>Extended formats (7z, RAR, Zstandard)</li>
+</ul>
+<h3 id="ml-model-security-v1100">ML Model Security (v1.10.0+)</h3>
+<ul>
+<li>Safe pickle file analysis</li>
+<li>ONNX and SafeTensors validation</li>
+<li>PyTorch/TensorFlow native formats</li>
+<li>100% detection rate on known exploits</li>
+<li>SARIF output for CI/CD integration</li>
+</ul>
+<h3 id="signature-database">Signature Database</h3>
+<ul>
+<li>188 OSS components covered</li>
+<li>1,400+ high-quality signatures</li>
+<li>Automatic license detection</li>
+<li>Security severity classification</li>
+</ul>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>BinarySniffer is a core component of the SEMCL.ONE ecosystem:</p>
+<ul>
+<li>Complements <strong>osslili</strong> for source code license detection</li>
+<li>Works with <strong>purl2notices</strong> for comprehensive attribution</li>
+<li>Integrates with <strong>ospac</strong> for policy evaluation</li>
+<li>Supports <strong>upmex</strong> for package metadata extraction</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<pre><code class="language-yaml"># ~/.binarysniffer/config.json
+{
+  &quot;signature_sources&quot;: [
+    &quot;https://signatures.binarysniffer.io/core.xmdb&quot;
+  ],
+  &quot;min_confidence&quot;: 0.5,
+  &quot;parallel_workers&quot;: 4,
+  &quot;auto_update&quot;: true
+}
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/USER_GUIDE.md">User Guide</a> - Comprehensive usage examples</li>
+<li><a href="docs/API_REFERENCE.md">API Reference</a> - Python API documentation</li>
+<li><a href="docs/ML_SECURITY.md">ML Security</a> - ML model security analysis</li>
+<li><a href="docs/SIGNATURE_MANAGEMENT.md">Signature Management</a> - Creating and managing signatures</li>
+<li><a href="docs/ARCHITECTURE.md">Architecture</a> - System design and internals</li>
+</ul>
+<h2 id="advanced-topics">Advanced Topics</h2>
+<ul>
+<li><a href="docs/TLSH_FUZZY_MATCHING.md">TLSH Fuzzy Matching</a> - Detecting modified components</li>
+<li><a href="docs/CREATING_SIGNATURES.md">Creating Signatures</a> - Contributing new signatures</li>
+<li><a href="docs/INSTALLATION.md">Installation Guide</a> - Platform-specific setup</li>
+<li><a href="docs/PACKAGE_VERIFICATION.md">Package Verification</a> - Archive analysis</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Signature contributions</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/binarysniffer/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/binarysniffer">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../upmex/" class="btn btn-neutral float-left" title="upmex"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../src2purl/" class="btn btn-neutral float-right" title="src2purl">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../upmex/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../src2purl/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/vulnq/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>vulnq - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "vulnq";
+        var mkdocs_page_input_path = "vulnq/README.md";
+        var mkdocs_page_url = "/Repo_docs/vulnq/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">vulnq</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#command-line">Command Line</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python-api">Python API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-vulnerability-sources">Supported Vulnerability Sources</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-identifier-formats">Supported Identifier Formats</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#package-urls-purls">Package URLs (PURLs)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cpe-common-platform-enumeration">CPE (Common Platform Enumeration)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-hashes">File Hashes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output-formats">Output Formats</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#table-default">Table (default)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#json">JSON</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#development">Development</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#running-tests">Running Tests</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#building">Building</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">vulnq</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/vulnq/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vulnq-vulnerability-query-tool">vulnq - Vulnerability Query Tool</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="Apache-2.0" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a></p>
+<p>vulnq is a lightweight, multi-source vulnerability query tool that consolidates security data from multiple vulnerability databases. It accepts various software identifiers (PURLs, CPEs, hashes) and returns comprehensive vulnerability information including CVEs, severity scores, and available fixes.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Multiple ID Formats</strong> - Accepts PURLs, CPE strings, and file hashes</li>
+<li><strong>Multi-Source Aggregation</strong> - Queries OSV.dev, GitHub Advisory, NIST NVD, and more</li>
+<li><strong>Smart Format Detection</strong> - Auto-detects input format or accepts explicit flags</li>
+<li><strong>Upgrade Path Suggestions</strong> - Identifies fixed versions when available</li>
+<li><strong>Lightweight</strong> - API-only design, no local vulnerability databases</li>
+<li><strong>Flexible Output</strong> - JSON, table, and markdown formats</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install vulnq
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/scanoss/vulnq.git
+cd vulnq
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="command-line">Command Line</h3>
+<pre><code class="language-bash"># Query using Package URL (auto-detected)
+vulnq pkg:npm/express@4.17.1
+
+# Query using CPE string (example: Apache Log4j)
+vulnq --cpe &quot;cpe:2.3:a:apache:log4j:2.14.0:*:*:*:*:*:*:*&quot;
+
+# Note: Hash-based queries are not currently supported by vulnerability databases
+
+# Query multiple identifiers from file
+vulnq --input packages.txt
+
+# Filter by severity
+vulnq pkg:pypi/django@3.2.1 --min-severity high
+
+# Output as JSON
+vulnq pkg:gem/rails@6.0.0 --format json
+
+# Include fixed versions only
+vulnq pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1 --show-fixes
+</code></pre>
+<h3 id="python-api">Python API</h3>
+<pre><code class="language-python">from vulnq import VulnerabilityQuery
+
+# Initialize the query engine
+vq = VulnerabilityQuery()
+
+# Query by PURL
+results = vq.query(&quot;pkg:npm/express@4.17.1&quot;)
+
+# Query by CPE
+results = vq.query_cpe(&quot;cpe:2.3:a:apache:log4j:2.14.0:*:*:*:*:*:*:*&quot;)
+
+# Note: Hash queries are not currently supported by vulnerability databases
+# Future versions may support this through file-to-package mapping services
+
+# Process results
+for vuln in results.vulnerabilities:
+    print(f&quot;{vuln.id}: {vuln.severity} - {vuln.summary}&quot;)
+    if vuln.fixed_versions:
+        print(f&quot;  Fixed in: {', '.join(vuln.fixed_versions)}&quot;)
+</code></pre>
+<h2 id="supported-vulnerability-sources">Supported Vulnerability Sources</h2>
+<ul>
+<li><strong>OSV.dev</strong> - Google's Open Source Vulnerability database</li>
+<li><strong>GitHub Advisory Database</strong> - GitHub Security Advisories</li>
+<li><strong>NIST NVD</strong> - National Vulnerability Database</li>
+<li><strong>FIRST.org</strong> - Forum of Incident Response and Security Teams (planned)</li>
+<li><strong>Sonatype OSS Index</strong> - Component vulnerability data (planned)</li>
+</ul>
+<h2 id="supported-identifier-formats">Supported Identifier Formats</h2>
+<h3 id="package-urls-purls">Package URLs (PURLs)</h3>
+<ul>
+<li><code>pkg:npm/package@version</code></li>
+<li><code>pkg:pypi/package@version</code></li>
+<li><code>pkg:maven/group/artifact@version</code></li>
+<li><code>pkg:gem/package@version</code></li>
+<li><code>pkg:cargo/package@version</code></li>
+<li><code>pkg:nuget/package@version</code></li>
+<li><code>pkg:golang/module@version</code></li>
+</ul>
+<h3 id="cpe-common-platform-enumeration">CPE (Common Platform Enumeration)</h3>
+<ul>
+<li><code>cpe:2.3:a:vendor:product:version:*:*:*:*:*:*:*</code></li>
+<li><code>cpe:/a:vendor:product:version</code> (legacy format)</li>
+</ul>
+<h3 id="file-hashes">File Hashes</h3>
+<ul>
+<li>SHA256</li>
+<li>SHA1</li>
+<li>MD5</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>vulnq can be configured via environment variables or config file:</p>
+<pre><code class="language-bash"># API Keys (optional, for higher rate limits)
+export GITHUB_TOKEN=&quot;your_github_token&quot;
+export NVD_API_KEY=&quot;your_nvd_api_key&quot;
+
+# Cache settings
+export VULNQ_CACHE_DIR=&quot;~/.vulnq/cache&quot;
+export VULNQ_CACHE_TTL=&quot;3600&quot;  # seconds
+
+# Rate limiting
+export VULNQ_MAX_CONCURRENT=&quot;5&quot;
+</code></pre>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>vulnq is designed to work seamlessly with other SEMCL.ONE tools:</p>
+<pre><code class="language-bash"># Pipe PURLs from src2purl to vulnq
+src2purl /path/to/project | vulnq --format json
+
+# Check vulnerabilities for detected packages
+upmex /path/to/package.json | vulnq --min-severity critical
+
+# Generate vulnerability report from SBOM
+cat sbom.json | vulnq --input - --format markdown &gt; vulns.md
+</code></pre>
+<h2 id="output-formats">Output Formats</h2>
+<h3 id="table-default">Table (default)</h3>
+<pre><code>┌──────────────┬──────────┬──────────┬─────────────────┬──────────────┐
+│ CVE          │ Severity │ CVSS     │ Package         │ Fixed In     │
+├──────────────┼──────────┼──────────┼─────────────────┼──────────────┤
+│ CVE-2021-1234│ HIGH     │ 7.5      │ express@4.17.1  │ 4.17.2       │
+│ CVE-2021-5678│ CRITICAL │ 9.8      │ express@4.17.1  │ 4.18.0       │
+└──────────────┴──────────┴──────────┴─────────────────┴──────────────┘
+</code></pre>
+<h3 id="json">JSON</h3>
+<pre><code class="language-json">{
+  &quot;query&quot;: &quot;pkg:npm/express@4.17.1&quot;,
+  &quot;vulnerabilities&quot;: [
+    {
+      &quot;id&quot;: &quot;CVE-2021-1234&quot;,
+      &quot;severity&quot;: &quot;HIGH&quot;,
+      &quot;cvss_score&quot;: 7.5,
+      &quot;summary&quot;: &quot;Remote Code Execution...&quot;,
+      &quot;fixed_versions&quot;: [&quot;4.17.2&quot;, &quot;4.18.0&quot;],
+      &quot;references&quot;: [...]
+    }
+  ],
+  &quot;metadata&quot;: {
+    &quot;sources&quot;: [&quot;osv&quot;, &quot;github&quot;, &quot;nvd&quot;],
+    &quot;query_time&quot;: &quot;2024-11-04T10:30:00Z&quot;
+  }
+}
+</code></pre>
+<h2 id="development">Development</h2>
+<h3 id="running-tests">Running Tests</h3>
+<pre><code class="language-bash"># Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=vulnq tests/
+
+# Run specific test
+pytest tests/test_osv_client.py -v
+</code></pre>
+<h3 id="building">Building</h3>
+<pre><code class="language-bash"># Build package
+python -m build
+
+# Install locally for testing
+pip install -e .
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details.</p>
+<h2 id="license">License</h2>
+<p>vulnq is released under the Apache License 2.0. See <a href="LICENSE">LICENSE</a> for details.</p>
+<h2 id="support">Support</h2>
+<ul>
+<li><strong>Issues</strong>: <a href="https://github.com/scanoss/vulnq/issues">GitHub Issues</a></li>
+<li><strong>Discussions</strong>: <a href="https://github.com/scanoss/vulnq/discussions">GitHub Discussions</a></li>
+<li><strong>Security</strong>: Report vulnerabilities to security@scanoss.com</li>
+</ul>
+<hr />
+<p><em>Part of the <a href="https://github.com/scanoss/semcl.one">SEMCL.ONE</a> Software Composition Analysis toolchain</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../purl2notices/" class="btn btn-neutral float-left" title="purl2notices"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ospac/" class="btn btn-neutral float-right" title="ospac">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../purl2notices/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ospac/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

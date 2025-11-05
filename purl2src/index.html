@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/purl2src/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>purl2src - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "purl2src";
+        var mkdocs_page_input_path = "purl2src/README.md";
+        var mkdocs_page_url = "/Repo_docs/purl2src/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">purl2src</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python-api">Python API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-ecosystems">Supported Ecosystems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#npm-with-scoped-package">NPM with Scoped Package</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#maven-with-classifier">Maven with Classifier</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#generic-with-checksum-validation">Generic with Checksum Validation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">purl2src</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/purl2src/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="purl2src-package-url-to-source-download-urls">PURL2SRC - Package URL to Source Download URLs</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/purl2src/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/purl2src.svg" /></a></p>
+<p>Translate Package URLs (PURLs) into validated download URLs for source code artifacts across multiple package ecosystems. Provides a reliable three-tier resolution strategy with URL validation and batch processing capabilities for automated source code retrieval workflows.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Multi-Ecosystem Support</strong>: NPM, PyPI, Cargo, NuGet, GitHub, Maven, RubyGems, Go, Conda, and more</li>
+<li><strong>Smart Resolution Strategy</strong>: Three-level approach from direct URL construction to API queries and local fallback</li>
+<li><strong>URL Validation</strong>: Verify download URLs are accessible before returning results</li>
+<li><strong>SEMCL.ONE Integration</strong>: Seamlessly integrates with other ecosystem tools for comprehensive source analysis</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install purl2src
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/purl2src.git
+cd purl2src
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Convert a single PURL to download URL
+purl2src &quot;pkg:npm/express@4.17.1&quot;
+
+# Batch process multiple PURLs with validation
+purl2src -f purls.txt --validate --output results.json
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Single PURL with default text output
+purl2src &quot;pkg:npm/express@4.17.1&quot;
+# Output: pkg:npm/express@4.17.1 -&gt; https://registry.npmjs.org/express/-/express-4.17.1.tgz
+
+# JSON output format
+purl2src &quot;pkg:npm/express@4.17.1&quot; --format json
+
+# With URL validation
+purl2src &quot;pkg:pypi/requests@2.28.0&quot; --validate
+
+# Batch processing from file
+purl2src -f purls.txt --output results.json
+
+# CSV output format
+purl2src -f purls.txt --format csv --output results.csv
+</code></pre>
+<h3 id="python-api">Python API</h3>
+<pre><code class="language-python">from purl2src import get_download_url
+
+# Get download URL for a PURL
+result = get_download_url(&quot;pkg:npm/express@4.17.1&quot;)
+print(result.download_url)
+# https://registry.npmjs.org/express/-/express-4.17.1.tgz
+
+# With validation (recommended for production)
+result = get_download_url(&quot;pkg:pypi/requests@2.28.0&quot;, validate=True)
+
+# Batch processing
+from purl2src import process_purls
+results = process_purls([&quot;pkg:npm/express@4.17.1&quot;, &quot;pkg:pypi/requests@2.28.0&quot;])
+</code></pre>
+<h2 id="supported-ecosystems">Supported Ecosystems</h2>
+<table>
+<thead>
+<tr>
+<th>Ecosystem</th>
+<th>PURL Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPM</td>
+<td><code>npm</code></td>
+<td><code>pkg:npm/@angular/core@12.0.0</code></td>
+</tr>
+<tr>
+<td>PyPI</td>
+<td><code>pypi</code></td>
+<td><code>pkg:pypi/django@4.0.0</code></td>
+</tr>
+<tr>
+<td>Cargo</td>
+<td><code>cargo</code></td>
+<td><code>pkg:cargo/serde@1.0.0</code></td>
+</tr>
+<tr>
+<td>NuGet</td>
+<td><code>nuget</code></td>
+<td><code>pkg:nuget/Newtonsoft.Json@13.0.1</code></td>
+</tr>
+<tr>
+<td>Maven</td>
+<td><code>maven</code></td>
+<td><code>pkg:maven/org.apache.commons/commons-lang3@3.12.0</code></td>
+</tr>
+<tr>
+<td>RubyGems</td>
+<td><code>gem</code></td>
+<td><code>pkg:gem/rails@7.0.0</code></td>
+</tr>
+<tr>
+<td>Go</td>
+<td><code>golang</code></td>
+<td><code>pkg:golang/github.com/gin-gonic/gin@v1.8.0</code></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><code>github</code></td>
+<td><code>pkg:github/facebook/react@v18.0.0</code></td>
+</tr>
+<tr>
+<td>Conda</td>
+<td><code>conda</code></td>
+<td><code>pkg:conda/numpy@1.23.0?channel=conda-forge&amp;subdir=linux-64&amp;build=py39h1234567_0</code></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td><code>generic</code></td>
+<td><code>pkg:generic/package@1.0.0?download_url=https://example.com/file.tar.gz</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<h3 id="npm-with-scoped-package">NPM with Scoped Package</h3>
+<pre><code class="language-bash">purl2src &quot;pkg:npm/@angular/core@12.0.0&quot;
+# Output: https://registry.npmjs.org/@angular/core/-/core-12.0.0.tgz
+</code></pre>
+<h3 id="maven-with-classifier">Maven with Classifier</h3>
+<pre><code class="language-bash">purl2src &quot;pkg:maven/org.apache.xmlgraphics/batik-anim@1.9.1?classifier=sources&quot;
+# Output: https://repo.maven.apache.org/maven2/org/apache/xmlgraphics/batik-anim/1.9.1/batik-anim-1.9.1-sources.jar
+</code></pre>
+<h3 id="generic-with-checksum-validation">Generic with Checksum Validation</h3>
+<pre><code class="language-bash">purl2src &quot;pkg:generic/mypackage@1.0.0?download_url=https://example.com/pkg.tar.gz&amp;checksum=sha256:abcd1234...&quot;
+</code></pre>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>PURL2SRC is a core component of the SEMCL.ONE ecosystem, enabling automated source code retrieval workflows:</p>
+<ul>
+<li>Works with <strong>src2purl</strong> for package identification and coordinate extraction</li>
+<li>Integrates with <strong>purl2notices</strong> for legal notice generation from source packages</li>
+<li>Supports <strong>upmex</strong> package metadata extraction workflows</li>
+<li>Complements <strong>osslili</strong> for comprehensive license analysis of downloaded sources</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/user-guide.md">User Guide</a> - Comprehensive usage examples and configuration</li>
+<li><a href="docs/api.md">API Reference</a> - Python API documentation and examples</li>
+<li><a href="docs/examples.md">Examples</a> - Common workflows and integration patterns</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Reporting issues</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/purl2src/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/purl2src">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../sbom-analysis-agentic/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../osslili/" class="btn btn-neutral float-right" title="osslili">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../sbom-analysis-agentic/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../osslili/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

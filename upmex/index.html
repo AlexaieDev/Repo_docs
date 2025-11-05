@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/upmex/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>upmex - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "upmex";
+        var mkdocs_page_input_path = "upmex/README.md";
+        var mkdocs_page_url = "/Repo_docs/upmex/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">upmex</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python-api">Python API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supported-package-types">Supported Package Types</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-features">Advanced Features</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#metadata-extraction">Metadata Extraction</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#license-detection">License Detection</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dependency-mapping">Dependency Mapping</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#api-enrichment">API Enrichment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#environment-variables">Environment Variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration-file">Configuration File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output-format">Output Format</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#standard-json-structure">Standard JSON Structure</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#workflow-example">Workflow Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#performance">Performance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../src2purl/">src2purl</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">upmex</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/upmex/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="upmex-universal-package-metadata-extractor">UPMEX - Universal Package Metadata Extractor</h1>
+<p><a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/upmex/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/upmex.svg" /></a></p>
+<p>Extract metadata and license information from packages across 15+ ecosystems with a single tool. Native extraction without external package managers, providing standardized JSON output with dependency mapping, license detection, and API enrichment capabilities.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Universal Package Support</strong>: Extract metadata from 15+ package ecosystems</li>
+<li><strong>Standardized Output</strong>: Consistent JSON structure across all formats</li>
+<li><strong>Native Extraction</strong>: No dependency on external package managers</li>
+<li><strong>SEMCL.ONE Integration</strong>: Works seamlessly with osslili, purl2notices, and ecosystem tools</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install upmex
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/upmex.git
+cd upmex
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Extract metadata from any package
+upmex extract package.whl
+
+# With API enrichment
+upmex extract --api all package.jar
+
+# Output to file with pretty formatting
+upmex extract --pretty package.gem -o metadata.json
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Basic extraction (offline mode)
+upmex extract package.whl
+
+# Registry mode - fetch missing metadata
+upmex extract --registry package.jar
+
+# API enrichment modes
+upmex extract --api clearlydefined package.whl
+upmex extract --api ecosystems package.tgz
+upmex extract --api purldb package.gem
+upmex extract --api vulnerablecode package.jar
+
+# Combined enrichment
+upmex extract --registry --api all package.jar
+
+# Detect package type
+upmex detect package.jar
+
+# Extract license information
+upmex license package.tgz
+
+# Text format output
+upmex extract --format text package.tar.gz
+</code></pre>
+<h3 id="python-api">Python API</h3>
+<pre><code class="language-python">from upmex import PackageExtractor
+
+# Create extractor
+extractor = PackageExtractor()
+
+# Extract metadata
+metadata = extractor.extract(&quot;path/to/package.whl&quot;)
+
+# Access metadata
+print(f&quot;Package: {metadata.name} v{metadata.version}&quot;)
+print(f&quot;Type: {metadata.package_type.value}&quot;)
+print(f&quot;License: {metadata.licenses[0].spdx_id if metadata.licenses else 'Unknown'}&quot;)
+
+# Convert to JSON
+import json
+print(json.dumps(metadata.to_dict(), indent=2))
+</code></pre>
+<h2 id="supported-package-types">Supported Package Types</h2>
+<table>
+<thead>
+<tr>
+<th>Ecosystem</th>
+<th>Formats</th>
+<th>Registry</th>
+<th>API Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>.whl, .tar.gz, .zip</td>
+<td>PyPI</td>
+<td>ClearlyDefined, Ecosyste.ms</td>
+</tr>
+<tr>
+<td>NPM/Node.js</td>
+<td>.tgz, .tar.gz</td>
+<td>NPM</td>
+<td>ClearlyDefined, Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Java/Maven</td>
+<td>.jar, .war, .ear</td>
+<td>Maven Central</td>
+<td>ClearlyDefined, PurlDB</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>.gem</td>
+<td>RubyGems</td>
+<td>ClearlyDefined, Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>.crate</td>
+<td>crates.io</td>
+<td>ClearlyDefined, Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>.zip, go.mod</td>
+<td>Go Modules</td>
+<td>ClearlyDefined, PurlDB</td>
+</tr>
+<tr>
+<td>NuGet/.NET</td>
+<td>.nupkg</td>
+<td>NuGet</td>
+<td>ClearlyDefined, Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Conda</td>
+<td>.conda, .tar.bz2</td>
+<td>Anaconda</td>
+<td>Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Perl/CPAN</td>
+<td>.tar.gz, .zip</td>
+<td>CPAN</td>
+<td>Ecosyste.ms</td>
+</tr>
+<tr>
+<td>CocoaPods</td>
+<td>.podspec, .podspec.json</td>
+<td>CocoaPods</td>
+<td>Ecosyste.ms</td>
+</tr>
+<tr>
+<td>Conan C/C++</td>
+<td>conanfile.py/.txt, .tgz</td>
+<td>Conan Center</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Gradle</td>
+<td>build.gradle(.kts)</td>
+<td>Maven/Gradle</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Debian</td>
+<td>.deb</td>
+<td>Debian</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>RPM</td>
+<td>.rpm</td>
+<td>RPM repos</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-features">Advanced Features</h2>
+<h3 id="metadata-extraction">Metadata Extraction</h3>
+<ul>
+<li><strong>Package Information</strong>: Name, version, description, homepage</li>
+<li><strong>Author Parsing</strong>: Intelligent name/email extraction and normalization</li>
+<li><strong>Repository Detection</strong>: Automatic VCS URL extraction</li>
+<li><strong>Platform Support</strong>: Architecture and OS requirement detection</li>
+<li><strong>Package URL (PURL)</strong>: Generate standard Package URLs</li>
+<li><strong>File Hashing</strong>: SHA-1, MD5, and fuzzy hash (TLSH)</li>
+<li><strong>Data Provenance</strong>: Track source of each data field</li>
+</ul>
+<h3 id="license-detection">License Detection</h3>
+<p>Powered by <a href="https://github.com/SemClone/osslili">osslili</a> v1.5.0+:</p>
+<ul>
+<li>SPDX identifier detection in metadata</li>
+<li>License file extraction (LICENSE, COPYING, etc.)</li>
+<li>Package manifest license field parsing</li>
+<li>Three-tier detection system with high accuracy</li>
+</ul>
+<h3 id="dependency-mapping">Dependency Mapping</h3>
+<ul>
+<li>Full dependency tree with version constraints</li>
+<li>Development vs. runtime dependency classification</li>
+<li>Optional dependency tracking</li>
+<li>Version range resolution</li>
+</ul>
+<h3 id="api-enrichment">API Enrichment</h3>
+<p>Enhance metadata with third-party APIs:</p>
+<h4 id="clearlydefined">ClearlyDefined</h4>
+<pre><code class="language-bash">upmex extract --api clearlydefined package.whl
+</code></pre>
+<ul>
+<li>License and compliance data</li>
+<li>Attribution information</li>
+<li>Security assessments</li>
+</ul>
+<h4 id="ecosystems">Ecosyste.ms</h4>
+<pre><code class="language-bash">upmex extract --api ecosystems package.jar
+</code></pre>
+<ul>
+<li>Package registry metadata</li>
+<li>Dependency information</li>
+<li>Version history</li>
+</ul>
+<h4 id="purldb">PurlDB</h4>
+<pre><code class="language-bash">upmex extract --api purldb package.gem
+</code></pre>
+<ul>
+<li>Comprehensive package metadata</li>
+<li>Cross-ecosystem information</li>
+<li>Historical data</li>
+</ul>
+<h4 id="vulnerablecode">VulnerableCode</h4>
+<pre><code class="language-bash">upmex extract --api vulnerablecode package.jar
+</code></pre>
+<ul>
+<li>Security vulnerability scanning</li>
+<li>CVE mapping</li>
+<li>Risk assessment</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<h3 id="environment-variables">Environment Variables</h3>
+<pre><code class="language-bash"># API Keys
+export PME_CLEARLYDEFINED_API_KEY=your-api-key
+export PME_ECOSYSTEMS_API_KEY=your-api-key
+export PME_PURLDB_API_KEY=your-api-key
+export PME_VULNERABLECODE_API_KEY=your-api-key
+
+# Settings
+export PME_LOG_LEVEL=DEBUG
+export PME_CACHE_DIR=/path/to/cache
+export PME_OUTPUT_FORMAT=json
+</code></pre>
+<h3 id="configuration-file">Configuration File</h3>
+<p>Create <code>config.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;api&quot;: {
+    &quot;clearlydefined&quot;: {
+      &quot;enabled&quot;: true,
+      &quot;api_key&quot;: null
+    },
+    &quot;ecosystems&quot;: {
+      &quot;enabled&quot;: true,
+      &quot;api_key&quot;: null
+    }
+  },
+  &quot;output&quot;: {
+    &quot;format&quot;: &quot;json&quot;,
+    &quot;pretty_print&quot;: true
+  },
+  &quot;cache&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;directory&quot;: &quot;~/.cache/upmex&quot;
+  }
+}
+</code></pre>
+<h2 id="output-format">Output Format</h2>
+<h3 id="standard-json-structure">Standard JSON Structure</h3>
+<pre><code class="language-json">{
+  &quot;package&quot;: {
+    &quot;name&quot;: &quot;example-package&quot;,
+    &quot;version&quot;: &quot;1.2.3&quot;,
+    &quot;type&quot;: &quot;pypi&quot;,
+    &quot;purl&quot;: &quot;pkg:pypi/example-package@1.2.3&quot;,
+    &quot;description&quot;: &quot;Package description&quot;
+  },
+  &quot;metadata&quot;: {
+    &quot;homepage&quot;: &quot;https://example.com&quot;,
+    &quot;repository&quot;: &quot;https://github.com/example/package&quot;,
+    &quot;documentation&quot;: &quot;https://docs.example.com&quot;
+  },
+  &quot;people&quot;: {
+    &quot;authors&quot;: [
+      {
+        &quot;name&quot;: &quot;John Doe&quot;,
+        &quot;email&quot;: &quot;john@example.com&quot;
+      }
+    ],
+    &quot;maintainers&quot;: []
+  },
+  &quot;licensing&quot;: {
+    &quot;licenses&quot;: [
+      {
+        &quot;spdx_id&quot;: &quot;MIT&quot;,
+        &quot;name&quot;: &quot;MIT License&quot;,
+        &quot;text&quot;: &quot;...&quot;
+      }
+    ]
+  },
+  &quot;dependencies&quot;: {
+    &quot;runtime&quot;: [
+      {
+        &quot;name&quot;: &quot;requests&quot;,
+        &quot;version_constraint&quot;: &quot;&gt;=2.0.0&quot;
+      }
+    ],
+    &quot;development&quot;: []
+  },
+  &quot;provenance&quot;: {
+    &quot;source&quot;: &quot;package_metadata&quot;,
+    &quot;enrichment&quot;: [&quot;clearlydefined&quot;, &quot;ecosystems&quot;]
+  }
+}
+</code></pre>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>UPMEX is a core component of the SEMCL.ONE ecosystem:</p>
+<ul>
+<li>Powers <strong>purl2notices</strong> for legal notice generation</li>
+<li>Uses <strong>osslili</strong> for enhanced license detection</li>
+<li>Supports <strong>src2purl</strong> for package identification</li>
+<li>Integrates with <strong>ospac</strong> for policy evaluation</li>
+<li>Works with <strong>purl2src</strong> for source retrieval</li>
+</ul>
+<h3 id="workflow-example">Workflow Example</h3>
+<pre><code class="language-bash"># 1. Extract metadata from package
+upmex extract library.jar -o metadata.json
+
+# 2. Generate legal notices
+purl2notices -i metadata.json -o NOTICE.txt
+
+# 3. Validate compliance
+ospac evaluate NOTICE.txt --policy compliance.yaml
+</code></pre>
+<h2 id="performance">Performance</h2>
+<ul>
+<li>Process packages up to 500MB in under 10 seconds</li>
+<li>Efficient caching for API responses</li>
+<li>Parallel processing for batch operations</li>
+<li>Memory-efficient streaming for large files</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/user-guide.md">User Guide</a> - Comprehensive usage documentation</li>
+<li><a href="docs/api.md">API Reference</a> - Python API documentation</li>
+<li><a href="docs/configuration.md">Configuration Guide</a> - Detailed configuration options</li>
+<li><a href="docs/examples.md">Examples</a> - Common use cases and workflows</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Reporting issues</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/upmex/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/upmex">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>Apache License 2.0 - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../osslili/" class="btn btn-neutral float-left" title="osslili"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../binarysniffer/" class="btn btn-neutral float-right" title="binarysniffer">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../osslili/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../binarysniffer/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alexaiedev.github.io/Repo_docs/src2purl/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>src2purl - Centro de Documentación</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "src2purl";
+        var mkdocs_page_input_path = "src2purl/README.md";
+        var mkdocs_page_url = "/Repo_docs/src2purl/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Centro de Documentación
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Proyects</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Best Practices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/CONTRIBUTING/">Contributing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../best-practices/SECURITY/">Security</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Open Agentic Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../open-agentic-framework/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SBOM Analysis Using Agentic</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../sbom-analysis-agentic/">Overview</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >SemClone Tools</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../purl2src/">purl2src</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../osslili/">osslili</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../upmex/">upmex</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../binarysniffer/">binarysniffer</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">src2purl</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick Start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cli-usage">CLI Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#python-api">Python API</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#discovery-strategy-examples">Discovery Strategy Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#api-authentication">API Authentication</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#swhid-validation">SWHID Validation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#command-line-options">Command Line Options</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-with-semclone">Integration with SEMCL.ONE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#support">Support</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#license">License</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authors">Authors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../purl2notices/">purl2notices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../vulnq/">vulnq</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ospac/">ospac</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ossnotices/">ossnotices</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guías MkDocs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about-mkdocs/">Acerca de MkDocs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/tldr/">TL;DR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/setup-project/">Set up project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/advanced/">Advanced</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/usage/">Usage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tutorial/deploy/">Deploy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Centro de Documentación</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Proyects</li>
+          <li class="breadcrumb-item">SemClone Tools</li>
+      <li class="breadcrumb-item active">src2purl</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/SemClone/src2purl/edit/main/docs/README.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="src2purl-source-code-to-package-url-discovery">SRC2PURL - Source Code to Package URL Discovery</h1>
+<p><a href="https://opensource.org/licenses/AGPL-3.0"><img alt="License" src="https://img.shields.io/badge/License-AGPL--3.0-blue.svg" /></a>
+<a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
+<a href="https://pypi.org/project/src2purl/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/src2purl.svg" /></a></p>
+<p>A Python tool that identifies package coordinates (name, version, license, PURL) from source code directories using a hybrid discovery strategy with manifest parsing, code fingerprinting, repository search, and Software Heritage archive integration.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>2-Phase Discovery Strategy</strong>: Hash-based identification enhanced by manifest parsing</li>
+<li><strong>Multi-Ecosystem Support</strong>: PyPI, NPM, Maven, Go, Ruby Gems, PHP, .NET, and more</li>
+<li><strong>Fast Performance</strong>: 5-15 seconds for typical projects (vs 90+ seconds with SWH)</li>
+<li><strong>SEMCL.ONE Integration</strong>: Works seamlessly with upmex, osslili, and other ecosystem tools</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">pip install src2purl
+</code></pre>
+<p>For development:</p>
+<pre><code class="language-bash">git clone https://github.com/SemClone/src2purl.git
+cd src2purl
+pip install -e .
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Identify package from source code
+src2purl /path/to/source/code
+
+# With Software Heritage archive (comprehensive but slower)
+src2purl /path/to/source --use-swh
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="cli-usage">CLI Usage</h3>
+<pre><code class="language-bash"># Fast discovery (default) - Uses manifest parsing + SCANOSS + GitHub (5-15 seconds)
+src2purl /path/to/source/code
+
+# Comprehensive discovery - Includes Software Heritage archive (90+ seconds)
+src2purl /path/to/source --use-swh
+
+# High confidence matches only
+src2purl /path/to/source --confidence-threshold 0.85
+
+# JSON output format for integration
+src2purl /path/to/source --output-format json
+
+# Detect subcomponents in monorepos
+src2purl /path/to/source --detect-subcomponents
+</code></pre>
+<h3 id="python-api">Python API</h3>
+<pre><code class="language-python">from src2purl import identify_package
+
+# Basic identification
+result = identify_package(&quot;/path/to/source&quot;)
+print(f&quot;Package: {result.name}@{result.version}&quot;)
+print(f&quot;PURL: {result.purl}&quot;)
+
+# With options
+result = identify_package(
+    path=&quot;/path/to/source&quot;,
+    use_swh=True,
+    confidence_threshold=0.85
+)
+</code></pre>
+<h3 id="discovery-strategy-examples">Discovery Strategy Examples</h3>
+<pre><code class="language-bash"># Default: 2-Phase hybrid approach (5-15 seconds)
+# Phase 1: Hash-based discovery + Phase 2: UPMEX manifest parsing
+# Good for: Most use cases, balanced speed and accuracy
+src2purl /path/to/project
+
+# Comprehensive: Include Software Heritage archive (90+ seconds)
+# Phase 1 includes deep provenance discovery + Phase 2: UPMEX enhancement
+# Good for: Security audits, research, historical analysis
+export SWH_API_TOKEN=your_token  # Optional but recommended
+src2purl /path/to/project --use-swh
+
+# High confidence: Only report confident matches
+# Filters results to highest confidence findings from both phases
+src2purl /path/to/project --confidence-threshold 0.85
+</code></pre>
+<h3 id="api-authentication">API Authentication</h3>
+<p><strong>No API keys required!</strong> The tool works with the free public APIs. API keys only provide enhanced rate limits and additional features.</p>
+<h4 id="recommended-api-keys-optional">Recommended API Keys (Optional)</h4>
+<p><strong>1. GitHub API</strong> - <strong>Most Valuable</strong> (Free, 2 minutes to setup)</p>
+<pre><code class="language-bash">export GITHUB_TOKEN=your_github_personal_access_token
+</code></pre>
+<ul>
+<li><strong>Get token</strong>: https://github.com/settings/tokens (no special permissions needed)</li>
+<li><strong>Benefits</strong>:</li>
+<li><strong>Rate limit</strong>: 10 → 5000 requests/hour</li>
+<li><strong>Better search</strong>: More accurate repository identification</li>
+<li><strong>No cost</strong>: Completely free</li>
+<li><strong>Impact</strong>: Significant improvement for repository discovery</li>
+</ul>
+<p><strong>2. SCANOSS API</strong> - <strong>Nice to Have</strong> (Free, optional)</p>
+<pre><code class="language-bash">export SCANOSS_API_KEY=your_scanoss_key
+</code></pre>
+<ul>
+<li><strong>Get token</strong>: Register at https://www.scanoss.com</li>
+<li><strong>Benefits</strong>:</li>
+<li><strong>No cost</strong>: Free tier available</li>
+<li><strong>Enhanced rate limits</strong>: Premium API endpoint</li>
+<li><strong>Additional features</strong>: Possible extra metadata</li>
+<li><strong>Impact</strong>: Minor improvement (SCANOSS works great without key)</li>
+</ul>
+<p><strong>3. Software Heritage API</strong> - <strong>For Heavy Usage</strong> (Free, only if using <code>--use-swh</code>)</p>
+<pre><code class="language-bash">export SWH_API_TOKEN=your_swh_token
+</code></pre>
+<ul>
+<li><strong>Get token</strong>: Register at https://archive.softwareheritage.org/api/</li>
+<li><strong>Benefits</strong>:</li>
+<li><strong>Bypass rate limits</strong>: No 60-second waits</li>
+<li><strong>Faster comprehensive scans</strong>: When using <code>--use-swh</code></li>
+<li><strong>Impact</strong>: Essential for <code>--use-swh</code> flag, not needed for default fast mode</li>
+</ul>
+<h4 id="performance-comparison">Performance Comparison</h4>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Typical Time</th>
+<th>API Calls</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No API keys</strong></td>
+<td>5-15 seconds</td>
+<td>Minimal</td>
+<td>Most users</td>
+</tr>
+<tr>
+<td><strong>+ GitHub token</strong></td>
+<td>5-15 seconds</td>
+<td>Enhanced</td>
+<td>Recommended setup</td>
+</tr>
+<tr>
+<td><strong>+ All tokens</strong></td>
+<td>5-15 seconds</td>
+<td>Premium</td>
+<td>Production use</td>
+</tr>
+<tr>
+<td><strong>+ SWH mode</strong></td>
+<td>90+ seconds</td>
+<td>Heavy</td>
+<td>Security audits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation</strong>: Start with <strong>GitHub token only</strong> - it's free, fast to setup, and provides the biggest improvement.</p>
+<h3 id="swhid-validation">SWHID Validation</h3>
+<pre><code class="language-bash"># Generate and validate SWHID for a directory
+src2purl-validate /path/to/directory
+
+# Compare against expected SWHID
+src2purl-validate /path/to/directory --expected-swhid swh:1:dir:abc123...
+
+# Use fallback implementation
+src2purl-validate /path/to/directory --use-fallback --verbose
+</code></pre>
+<h3 id="command-line-options">Command Line Options</h3>
+<h4 id="core-options"><strong>Core Options</strong></h4>
+<ul>
+<li><code>path</code>: Directory path to analyze (required)</li>
+<li><code>--confidence-threshold</code>: Minimum confidence to report matches (default: 0.3)</li>
+<li><code>--output-format</code>: Output format: 'json' or 'table' (default: table)</li>
+<li><code>--verbose</code>: Verbose output for debugging</li>
+</ul>
+<h4 id="discovery-control"><strong>Discovery Control</strong></h4>
+<ul>
+<li><code>--use-swh</code>: Include Software Heritage archive checking (optional, adds 90+ seconds)</li>
+<li><code>--no-license-detection</code>: Skip automatic license detection from local source (faster)</li>
+<li><code>--detect-subcomponents</code>: Detect and identify subcomponents in monorepos</li>
+<li><code>--max-depth</code>: Maximum directory depth to scan (default: 2)</li>
+</ul>
+<h4 id="performance-caching"><strong>Performance &amp; Caching</strong></h4>
+<ul>
+<li><code>--no-cache</code>: Disable API response caching</li>
+<li><code>--clear-cache</code>: Clear all cached API responses and exit</li>
+</ul>
+<h4 id="authentication"><strong>Authentication</strong></h4>
+<ul>
+<li><code>--api-token</code>: Software Heritage API token (only used with --use-swh)</li>
+<li>Environment variables: <code>GITHUB_TOKEN</code>, <code>SCANOSS_API_KEY</code>, <code>SWH_API_TOKEN</code></li>
+</ul>
+<h4 id="discovery-method-breakdown"><strong>Discovery Method Breakdown</strong></h4>
+<pre><code class="language-bash"># Default: 2-Phase Discovery (Hash-based + UPMEX manifest parsing)
+src2purl /path/to/project
+
+# Phase 1: SWHID generation → GitHub/SCANOSS search
+# Phase 2: UPMEX manifest extraction → Cross-validation &amp; enhancement
+
+# Add Software Heritage for comprehensive provenance discovery
+src2purl /path/to/project --use-swh
+
+# Phase 1: SWHID generation → Software Heritage archive → Fallback search
+# Phase 2: UPMEX manifest extraction → Cross-validation &amp; enhancement
+
+# Performance optimization options
+src2purl /path/to/project --no-license-detection  # Skip license enhancement
+src2purl /path/to/project --use-swh --verbose     # Full discovery with details
+</code></pre>
+<h2 id="integration-with-semclone">Integration with SEMCL.ONE</h2>
+<p>SRC2PURL is a core component of the SEMCL.ONE ecosystem:</p>
+<ul>
+<li>Uses <strong>upmex</strong> for manifest parsing and package metadata extraction</li>
+<li>Integrates with <strong>osslili</strong> for enhanced license detection</li>
+<li>Provides PURLs for <strong>purl2src</strong> to download source packages</li>
+<li>Supports <strong>purl2notices</strong> for generating attribution documentation</li>
+<li>Enables <strong>ospac</strong> policy evaluation with identified packages</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Configuration via environment variables:</p>
+<pre><code class="language-bash"># API tokens (optional but recommended)
+export GITHUB_TOKEN=your_github_token
+export SCANOSS_API_KEY=your_scanoss_key
+export SWH_API_TOKEN=your_swh_token
+
+# Performance settings
+export SRC2PURL_CACHE_DIR=~/.cache/src2purl
+export SRC2PURL_MAX_DEPTH=2
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="docs/user-guide.md">User Guide</a> - Comprehensive usage examples</li>
+<li><a href="docs/api.md">API Reference</a> - Python API documentation</li>
+<li><a href="docs/discovery-methods.md">Discovery Methods</a> - Detailed explanation of identification strategies</li>
+<li><a href="docs/examples.md">Examples</a> - Common use cases and workflows</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Please see <a href="CONTRIBUTING/">CONTRIBUTING.md</a> for details on:
+- Code of conduct
+- Development setup
+- Submitting pull requests
+- Reporting issues</p>
+<h2 id="support">Support</h2>
+<p>For support and questions:
+- <a href="https://github.com/SemClone/src2purl/issues">GitHub Issues</a> - Bug reports and feature requests
+- <a href="https://github.com/SemClone/src2purl">Documentation</a> - Complete project documentation
+- <a href="https://semcl.one">SEMCL.ONE Community</a> - Ecosystem support and discussions</p>
+<h2 id="license">License</h2>
+<p>GNU Affero General Public License v3.0 (AGPL-3.0) - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="authors">Authors</h2>
+<p>See <a href="AUTHORS/">AUTHORS.md</a> for a list of contributors.</p>
+<hr />
+<p><em>Part of the <a href="https://semcl.one">SEMCL.ONE</a> ecosystem for comprehensive OSS compliance and code analysis.</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../binarysniffer/" class="btn btn-neutral float-left" title="binarysniffer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../purl2notices/" class="btn btn-neutral float-right" title="purl2notices">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/AlexaieDev/Repo_docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../binarysniffer/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../purl2notices/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
