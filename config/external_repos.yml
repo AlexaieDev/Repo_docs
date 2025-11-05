@@ -86,6 +86,124 @@ repositories:
     # Programación de actualizaciones
     update_schedule: always
 
+  # SemClone Tools
+  - name: purl2src
+    owner: SemClone
+    repo: purl2src
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Convert Package URLs to source code locations"
+      tags: [purl, source-code, sbom]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: osslili
+    owner: SemClone
+    repo: osslili
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "OSS License and License Information tool"
+      tags: [license, oss, compliance]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: upmex
+    owner: SemClone
+    repo: upmex
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Universal Package Manager Explorer"
+      tags: [package-manager, dependencies]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: binarysniffer
+    owner: SemClone
+    repo: binarysniffer
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Binary analysis and sniffing tool"
+      tags: [binary, analysis, security]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: src2purl
+    owner: SemClone
+    repo: src2purl
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Convert source code to Package URLs"
+      tags: [purl, source-code, sbom]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: purl2notices
+    owner: SemClone
+    repo: purl2notices
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Generate attribution notices from PURLs"
+      tags: [purl, notices, compliance]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: vulnq
+    owner: SemClone
+    repo: vulnq
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Vulnerability query and analysis tool"
+      tags: [vulnerability, security, cve]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: ospac
+    owner: SemClone
+    repo: ospac
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "Open Source Package Analysis and Compliance"
+      tags: [compliance, analysis, oss]
+    import_strategy: full_docs
+    update_schedule: always
+
+  - name: ossnotices
+    owner: SemClone
+    repo: ossnotices
+    branch: main
+    metadata:
+      category: SemClone-Tools
+      status: active
+      featured: true
+      description: "OSS attribution notices generator"
+      tags: [oss, notices, compliance]
+    import_strategy: full_docs
+    update_schedule: always
+
   # Ejemplo: Agregar más repositorios aquí
   # - name: Otro Proyecto
   #   owner: AlexaieDev

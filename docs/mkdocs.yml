@@ -24,9 +24,58 @@ plugins:
           import_url: 'https://github.com/oscarvalenzuelab/open_agentic_framework?branch=main'
         - name: sbom-analysis-agentic
           import_url: 'https://github.com/oscarvalenzuelab/sbom_analysis_using_agentic?branch=main'
+        - name: purl2src
+          import_url: 'https://github.com/SemClone/purl2src?branch=main'
+        - name: osslili
+          import_url: 'https://github.com/SemClone/osslili?branch=main'
+        - name: upmex
+          import_url: 'https://github.com/SemClone/upmex?branch=main'
+        - name: binarysniffer
+          import_url: 'https://github.com/SemClone/binarysniffer?branch=main'
+        - name: src2purl
+          import_url: 'https://github.com/SemClone/src2purl?branch=main'
+        - name: purl2notices
+          import_url: 'https://github.com/SemClone/purl2notices?branch=main'
+        - name: vulnq
+          import_url: 'https://github.com/SemClone/vulnq?branch=main'
+        - name: ospac
+          import_url: 'https://github.com/SemClone/ospac?branch=main'
+        - name: ossnotices
+          import_url: 'https://github.com/SemClone/ossnotices?branch=main'
 
 nav:
   - Inicio: index.md
+  - Proyects:
+      - Best Practices:
+          - Overview: best-practices/README.md
+          - Contributing: best-practices/CONTRIBUTING.md
+          - Security: best-practices/SECURITY.md
+      - Open Agentic Framework:
+          - Overview: open-agentic-framework/README.md
+      - SBOM Analysis Using Agentic:
+          - Overview: sbom-analysis-agentic/README.md
+      - SemClone Tools:
+          - purl2src: purl2src/README.md
+          - osslili: osslili/README.md
+          - upmex: upmex/README.md
+          - binarysniffer: binarysniffer/README.md
+          - src2purl: src2purl/README.md
+          - purl2notices: purl2notices/README.md
+          - vulnq: vulnq/README.md
+          - ospac: ospac/README.md
+          - ossnotices: ossnotices/README.md
+  - Guías MkDocs:
+      - Acerca de MkDocs: about-mkdocs.md
+      - Tutorial:
+          - TL;DR: tutorial/tldr.md
+          - Installation: tutorial/installation.md
+          - Set up project: tutorial/setup-project.md
+          - Advanced: tutorial/advanced.md
+          - Usage: tutorial/usage.md
+          - Deploy: tutorial/deploy.md
+
+
+
   # - Proyectos:
   #     - Índice de Proyectos: proyectos/index.md
   #     - Proyecto 1 - Sistema de Gestión:
@@ -47,21 +96,3 @@ nav:
   #         - API Reference: proyectos/proyecto-3/api/index.md
   #         - Guías: proyectos/proyecto-3/guides/index.md
   #         - Ejemplos: proyectos/proyecto-3/examples/index.md
-  - Proyects:
-      - Best Practices:
-          - Overview: best-practices/README.md
-          - Contributing: best-practices/CONTRIBUTING.md
-          - Security: best-practices/SECURITY.md
-      - Open Agentic Framework:
-          - Overview: open-agentic-framework/README.md
-      - SBOM Analysis Using Agentic:
-          - Overview: sbom-analysis-agentic/README.md
-  - Guías MkDocs:
-      - Acerca de MkDocs: about-mkdocs.md
-      - Tutorial:
-          - TL;DR: tutorial/tldr.md
-          - Installation: tutorial/installation.md
-          - Set up project: tutorial/setup-project.md
-          - Advanced: tutorial/advanced.md
-          - Usage: tutorial/usage.md
-          - Deploy: tutorial/deploy.md
